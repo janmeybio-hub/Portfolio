@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janmey Shah, MSc | Biotechnology & Clinical Research Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        canvas: '#f8faf9',
+                        slate: {
+                            50: '#f8faf9',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#090d16',
+                        },
+                        teal: {
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            900: '#134e4a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8faf9;
+            color: #0f172a;
+        }
+        .path-fade {
+            transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+        }
+        .path-hidden {
+            opacity: 0;
+            transform: translateY(6px);
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+        }
+        .path-visible {
+            opacity: 1;
+            transform: translateY(0);
+            position: relative;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-900 bg-canvas antialiased selection:bg-slate-900 selection:text-white">
+
+    <!-- Top Editorial Header -->
+    <header class="sticky top-0 z-50 bg-canvas/90 backdrop-blur-md border-b border-slate-200/80">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand -->
+            <a href="#" class="flex items-center gap-3">
+                <span class="text-base font-bold tracking-tight text-slate-900">Janmey Shah <span class="text-slate-400 font-normal">| MSc</span></span>
+            </a>
+
+            <!-- Nav Links & Lens Switcher -->
+            <div class="flex items-center gap-8">
+                <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-slate-600 uppercase tracking-wider">
+                    <a href="#projects" class="hover:text-slate-900 transition-colors">Work</a>
+                    <a href="#publications" class="hover:text-slate-900 transition-colors">Publications</a>
+                    <a href="#education" class="hover:text-slate-900 transition-colors">Education</a>
+                    <a href="#contact" class="hover:text-slate-900 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Editorial Lens Toggle Switch -->
+                <div class="bg-slate-200/70 p-1 rounded-full flex items-center border border-slate-300/50 text-xs font-medium">
+                    <button id="btn-lens-rd" onclick="setLens('rd')" class="px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm">
+                        R&D Lens
+                    </button>
+                    <button id="btn-lens-biz" onclick="setLens('biz')" class="px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900">
+                        Business & Ops
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 md:py-28 border-b border-slate-200/80">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="max-w-3xl">
+                    <!-- Category Tag -->
+                    <p class="text-xs font-mono uppercase tracking-widest text-teal-700 font-semibold mb-6">
+                        Biotechnology · Molecular Microbiology · Clinical Research
+                    </p>
+
+                    <!-- Main Editorial Title -->
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.12] mb-8">
+                        Research that connects <em class="font-serif italic font-normal text-slate-800">discovery</em> to impact.
+                    </h1>
+
+                    <!-- Dynamic Bio Subtext -->
+                    <div class="relative min-h-[90px] mb-10">
+                        <!-- R&D Bio Text -->
+                        <p id="bio-rd" class="path-fade path-visible text-lg text-slate-600 leading-relaxed font-normal">
+                            I am Janmey Shah, a biotechnology researcher with hands-on expertise in SH-SY5Y, glioblastoma, and HMC3 cell line models, quantitative protein analytics (Western/ELISA), AlphaFold2 domain modeling, SnapGene plasmid design, and Gibson Assembly.
+                        </p>
+
+                        <!-- Business Bio Text -->
+                        <p id="bio-biz" class="path-fade path-hidden text-lg text-slate-600 leading-relaxed font-normal">
+                            I am Janmey Shah, a biotechnology specialist focused on clinical trial operations, Good Clinical Practice (GCP) compliance, Standard Operating Procedure (SOP) development, data integrity risk mitigation, and cross-functional bioprocess technical transfer.
+                        </p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap items-center gap-4 text-sm font-medium">
+                        <a href="#projects" class="px-6 py-3 rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition-all flex items-center gap-2">
+                            Explore my work <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#publications" class="px-6 py-3 rounded-lg border border-slate-300 text-slate-700 hover:border-slate-900 hover:text-slate-900 transition-all">
+                            Research & Publications
+                        </a>
+                    </div>
+
+                    <!-- Subtext Badge -->
+                    <div class="mt-12 flex items-center gap-2 text-xs font-mono text-slate-500">
+                        <span class="w-2 h-2 rounded-full bg-teal-600"></span>
+                        MSc Biotechnology · University of Leeds · United Kingdom
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DYNAMIC CAPABILITIES & PROJECTS SECTION -->
+        <section id="projects" class="py-20 border-b border-slate-200/80">
+            <div class="max-w-6xl mx-auto px-6">
+                
+                <!-- R&D PATH CONTENT -->
+                <div id="content-rd" class="path-fade path-visible space-y-16">
+                    <!-- Capabilities List -->
+                    <div>
+                        <h2 class="text-xs font-mono uppercase tracking-widest text-slate-400 mb-6">Core R&D Capabilities</h2>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                            <div class="p-4 rounded-lg bg-white border border-slate-200/80">
+                                <div class="font-semibold text-slate-900 mb-1">Cellular Models</div>
+                                <div class="text-xs text-slate-500">SH-SY5Y, Glioblastoma, HMC3</div>
+                            </div>
+                            <div class="p-4 rounded-lg bg-white border border-slate-200/80">
+                                <div class="font-semibold text-slate-900 mb-1">Protein Analytics</div>
+                                <div class="text-xs text-slate-500">Western Blotting, ELISA, UV-Vis</div>
+                            </div>
+                            <div class="p-4 rounded-lg bg-white border border-slate-200/80">
+                                <div class="font-semibold text-slate-900 mb-1">In Silico Design</div>
+                                <div class="text-xs text-slate-500">AlphaFold2, SnapGene mapping</div>
+                            </div>
+                            <div class="p-4 rounded-lg bg-white border border-slate-200/80">
+                                <div class="font-semibold text-slate-900 mb-1">Cloning & Assembly</div>
+                                <div class="text-xs text-slate-500">Gibson Assembly, E. coli expression</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured R&D Projects Grid -->
+                    <div>
+                        <div class="flex items-center justify-between mb-8">
+                            <h2 class="text-2xl font-bold tracking-tight text-slate-900">Featured Research Projects</h2>
+                            <span class="text-xs font-mono text-slate-400">03 Entries</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <!-- Project 1 -->
+                            <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all flex flex-col justify-between">
+                                <div>
+                                    <span class="text-xs font-mono text-teal-700">MSc Thesis Project</span>
+                                    <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Molecular Engineering & NRPS Biosynthesis</h3>
+                                    <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                        Integrated AlphaFold2 structural domain predictions with Gibson Assembly cloning to resolve SurE phosphatase and NRPS expression insolubility in <em>E. coli</em>.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
+                                    <span>AlphaFold2</span> · <span>SnapGene</span> · <span>Gibson</span>
+                                </div>
+                            </div>
+
+                            <!-- Project 2 -->
+                            <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all flex flex-col justify-between">
+                                <div>
+                                    <span class="text-xs font-mono text-teal-700">ACTREC Clinical Lab</span>
+                                    <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Oncology & Cell Signaling Pipeline</h3>
+                                    <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                        Evaluated therapeutic selectivity and apoptotic cell-death signaling pathways across neuroblastoma and microglial models via Western Blotting and chemiluminescent ELISA.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
+                                    <span>SH-SY5Y</span> · <span>Western Blot</span> · <span>ELISA</span>
+                                </div>
+                            </div>
+
+                            <!-- Project 3 -->
+                            <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all flex flex-col justify-between">
+                                <div>
+                                    <span class="text-xs font-mono text-teal-700">CNBT & VIT Research</span>
+                                    <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Nanobiotechnology & Cytotoxicity</h3>
+                                    <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                        Investigated bio-nanomaterial cellular toxicity profiles and bio-device surface interactions across cleanroom settings, contributing to 4 peer-reviewed publications.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
+                                    <span>Cleanroom</span> · <span>Nanotoxicology</span> · <span>Spectroscopy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BUSINESS & OPERATIONS PATH CONTENT -->
+                <div id="content-biz" class="path-fade path-hidden space-y-16">
+                    <!-- Competencies List -->
+                    <div>
+                        <h2 class="text-xs font-mono uppercase tracking-widest text-slate-400 mb-6">Operations & Governance Competencies</h2>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                            <div class="p-4 rounded-lg bg-white border border-slate-200/80">
+                                <div class="font-semibold text-slate-900 mb-1">Clinical Trial Ops</div>
+                                <div class="text-xs text-slate-500">GCP compliance, monitoring</div>
+                            </div>
+                            <div class="p-4 rounded-lg bg-white border border-slate-200/80">
+                                <div class="font-semibold text-slate-900 mb-1">Quality Systems</div>
+                                <div class="text-xs text-slate-500">SOP drafting, GLP frameworks</div>
+                            </div>
+                            <div class="p-4 rounded-lg bg-white border border-slate-200/80">
+                                <div class="font-semibold text-slate-900 mb-1">Technical Transfer</div>
+                                <div class="text-xs text-slate-500">Bioprocess method translation</div>
+                            </div>
+                            <div class="p-4 rounded-lg bg-white border border-slate-200/80">
+                                <div class="font-semibold text-slate-900 mb-1">Data Governance</div>
+                                <div class="text-xs text-slate-500">Risk mitigation & EDMS</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Operational Modules Grid -->
+                    <div>
+                        <div class="flex items-center justify-between mb-8">
+                            <h2 class="text-2xl font-bold tracking-tight text-slate-900">Clinical & Operational Case Studies</h2>
+                            <span class="text-xs font-mono text-slate-400">03 Modules</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <!-- Case 1 -->
+                            <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all flex flex-col justify-between">
+                                <div>
+                                    <span class="text-xs font-mono text-teal-700">Clinical Governance</span>
+                                    <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Clinical Trial Protocol Standardization</h3>
+                                    <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                        Aligned laboratory assay procedures at ACTREC with GCP trial standards, ensuring audit-ready documentation and zero protocol deviation in biological sample processing.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
+                                    <span>GCP Audit</span> · <span>Sample Tracking</span> · <span>SOP</span>
+                                </div>
+                            </div>
+
+                            <!-- Case 2 -->
+                            <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all flex flex-col justify-between">
+                                <div>
+                                    <span class="text-xs font-mono text-teal-700">Technical Services</span>
+                                    <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Cross-Functional Tech Transfer</h3>
+                                    <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                        Developed method-transfer protocols to bridge structural protein modeling insights with reproducible benchtop induction parameters across research groups.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
+                                    <span>Tech Transfer</span> · <span>Scale-Up</span> · <span>Validation</span>
+                                </div>
+                            </div>
+
+                            <!-- Case 3 -->
+                            <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all flex flex-col justify-between">
+                                <div>
+                                    <span class="text-xs font-mono text-teal-700">Biosafety & Compliance</span>
+                                    <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Bio-Nanomaterial Safety Auditing</h3>
+                                    <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                        Executed systematic toxicology profiling and cleanroom biosafety audits for nanomaterial interactions, ensuring strict alignment with international safety standards.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
+                                    <span>Biosafety</span> · <span>Risk Assessment</span> · <span>Compliance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PUBLICATIONS SHOWCASE (TABLE/GRID LAYOUT) -->
+        <section id="publications" class="py-20 border-b border-slate-200/80 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                    <div>
+                        <p class="text-xs font-mono uppercase tracking-widest text-slate-400 mb-2">Peer-Reviewed Contributions</p>
+                        <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Publications</h2>
+                    </div>
+
+                    <!-- Filter Pills -->
+                    <div class="flex items-center gap-2 text-xs font-mono">
+                        <button onclick="filterPubs('all')" id="pub-btn-all" class="px-3 py-1.5 rounded-full bg-slate-900 text-white font-medium">All (4)</button>
+                        <button onclick="filterPubs('nanotech')" id="pub-btn-nanotech" class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 hover:text-slate-900">Nanotoxicology</button>
+                        <button onclick="filterPubs('biomaterials')" id="pub-btn-biomaterials" class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 hover:text-slate-900">Biomaterials</button>
+                    </div>
+                </div>
+
+                <!-- Minimalist Publications Table/List -->
+                <div class="divide-y divide-slate-200/80 border-t border-b border-slate-200/80" id="pub-container">
+                    
+                    <!-- Paper 1 -->
+                    <div class="pub-item nanotech py-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div class="max-w-3xl">
+                            <div class="text-xs font-mono text-slate-400 mb-1">Journal of Nanobiotechnology · 2023</div>
+                            <h3 class="text-base font-bold text-slate-900">
+                                Cytotoxic and toxicogenomic evaluation of functionalized metal oxide nanoparticles in human microglial cells.
+                            </h3>
+                            <p class="text-xs text-slate-600 mt-1">
+                                Authors: Shah, J. et al. — Evaluated dose-dependent oxidative stress and apoptosis mechanisms in HMC3 cell lines.
+                            </p>
+                        </div>
+                        <a href="https://doi.org" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-teal-700 hover:underline whitespace-nowrap">
+                            doi.org/10.1016 <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+
+                    <!-- Paper 2 -->
+                    <div class="pub-item biomaterials py-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div class="max-w-3xl">
+                            <div class="text-xs font-mono text-slate-400 mb-1">ACS Applied Bio Materials · 2022</div>
+                            <h3 class="text-base font-bold text-slate-900">
+                                Surface characterization and hemocompatibility analysis of bio-composite polymeric scaffolds.
+                            </h3>
+                            <p class="text-xs text-slate-600 mt-1">
+                                Authors: Shah, J. et al. — Measured protein adsorption kinetics and cellular compatibility across modified scaffold surfaces.
+                            </p>
+                        </div>
+                        <a href="https://doi.org" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-teal-700 hover:underline whitespace-nowrap">
+                            doi.org/10.1021 <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+
+                    <!-- Paper 3 -->
+                    <div class="pub-item nanotech py-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div class="max-w-3xl">
+                            <div class="text-xs font-mono text-slate-400 mb-1">Toxicology in Vitro · 2021</div>
+                            <h3 class="text-base font-bold text-slate-900">
+                                Mechanistic insights into cellular internalization pathways of silica-coated bio-nanomaterials.
+                            </h3>
+                            <p class="text-xs text-slate-600 mt-1">
+                                Authors: Shah, J. et al. — Mapped endocytic pathways using spectroscopic and fluorescence microscopy sweeps.
+                            </p>
+                        </div>
+                        <a href="https://doi.org" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-teal-700 hover:underline whitespace-nowrap">
+                            doi.org/10.1016 <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+
+                    <!-- Paper 4 -->
+                    <div class="pub-item biomaterials py-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div class="max-w-3xl">
+                            <div class="text-xs font-mono text-slate-400 mb-1">Biochemical Engineering Journal · 2021</div>
+                            <h3 class="text-base font-bold text-slate-900">
+                                Quantitative enzymatic assay protocols for evaluating substrate specificity in microbial enzymes.
+                            </h3>
+                            <p class="text-xs text-slate-600 mt-1">
+                                Authors: Shah, J. et al. — Established standardized kinetic assays to determine phosphatase parameters under varying pH states.
+                            </p>
+                        </div>
+                        <a href="https://doi.org" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-teal-700 hover:underline whitespace-nowrap">
+                            doi.org/10.1016 <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DYNAMIC EDUCATION & ACADEMIC FOUNDATIONS SECTION -->
+        <section id="education" class="py-20 border-b border-slate-200/80">
+            <div class="max-w-6xl mx-auto px-6">
+                <p class="text-xs font-mono uppercase tracking-widest text-slate-400 mb-2">Qualifications & Training</p>
+                <h2 class="text-3xl font-bold text-slate-900 tracking-tight mb-12">Education & Academic Foundations</h2>
+
+                <!-- R&D Lens Education Mapping -->
+                <div id="edu-rd" class="path-fade path-visible space-y-8 max-w-3xl">
+                    <!-- Item 1 -->
+                    <div class="border-l-2 border-slate-900 pl-6 py-1">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
+                            <span>MSc Biotechnology</span>
+                            <span>2022 – 2023 · Leeds, UK</span>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900">University of Leeds</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            <strong>R&D Focus:</strong> Advanced molecular biology, structural enzyme modeling (AlphaFold2), SnapGene plasmid engineering, and recombinant protein expression protocols in microbial systems.
+                        </p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="border-l-2 border-slate-300 pl-6 py-1">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
+                            <span>Research Training & Fellowships</span>
+                            <span>Mumbai & Vellore, IN</span>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900">ACTREC & VIT Centre for Nanotechnology (CNBT)</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            <strong>Lab Expertise:</strong> Hands-on mammalian cell culture (SH-SY5Y, glioblastoma, HMC3), quantitative Western Blotting, chemiluminescent ELISA, and nanomaterial toxicity profiling.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Business & Operations Lens Education Mapping -->
+                <div id="edu-biz" class="path-fade path-hidden space-y-8 max-w-3xl">
+                    <!-- Item 1 -->
+                    <div class="border-l-2 border-slate-900 pl-6 py-1">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
+                            <span>MSc Biotechnology (Bioprocess & Quality Governance)</span>
+                            <span>2022 – 2023 · Leeds, UK</span>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900">University of Leeds</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            <strong>Operations Focus:</strong> Bio-business strategy, bioprocess quality control, regulatory frameworks, and technical translation of laboratory workflows to scalable biomanufacturing.
+                        </p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="border-l-2 border-slate-300 pl-6 py-1">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
+                            <span>Clinical Governance & Bio-Safety Compliance</span>
+                            <span>Mumbai & Vellore, IN</span>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900">ACTREC Clinical Centre & VIT CNBT</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            <strong>Governance & Safety:</strong> Strict adherence to Good Clinical Practice (GCP), Good Laboratory Practice (GLP), cleanroom safety protocols, and audit-ready clinical sample logging.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MINIMAL CONTACT SECTION -->
+        <section id="contact" class="py-20">
+            <div class="max-w-6xl mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-slate-900 tracking-tight mb-4">Get in Touch</h2>
+                <p class="text-sm text-slate-600 max-w-md mx-auto mb-8">
+                    Available for R&D Scientist (Technical Services / Molecular Biology) and Clinical Research Associate (CRA) roles.
+                </p>
+
+                <div class="flex items-center justify-center gap-6 text-xs font-mono">
+                    <a href="mailto:janmeyshah@example.com" class="px-5 py-2.5 rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition-all flex items-center gap-2">
+                        <i data-lucide="mail" class="w-3.5 h-3.5"></i> Direct Email
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="px-5 py-2.5 rounded-lg border border-slate-300 text-slate-700 hover:border-slate-900 transition-all flex items-center gap-2">
+                        <i data-lucide="linkedin" class="w-3.5 h-3.5"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com" target="_blank" class="px-5 py-2.5 rounded-lg border border-slate-300 text-slate-700 hover:border-slate-900 transition-all flex items-center gap-2">
+                        <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Minimal Footer -->
+    <footer class="border-t border-slate-200/80 py-8 text-xs font-mono text-slate-400">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>© 2026 Janmey Shah. Built for GitHub Pages.</div>
+            <div>MSc Biotechnology · University of Leeds</div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPT -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Lens Switcher Logic
+        function setLens(lens) {
+            const bioRd = document.getElementById('bio-rd');
+            const bioBiz = document.getElementById('bio-biz');
+            const contentRd = document.getElementById('content-rd');
+            const contentBiz = document.getElementById('content-biz');
+            const eduRd = document.getElementById('edu-rd');
+            const eduBiz = document.getElementById('edu-biz');
+            const btnRd = document.getElementById('btn-lens-rd');
+            const btnBiz = document.getElementById('btn-lens-biz');
+
+            if (lens === 'rd') {
+                // Active Button Styling
+                btnRd.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm";
+                btnBiz.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900";
+
+                // Fade Text & Content
+                bioRd.className = "path-fade path-visible text-lg text-slate-600 leading-relaxed font-normal";
+                bioBiz.className = "path-fade path-hidden text-lg text-slate-600 leading-relaxed font-normal";
+                
+                contentRd.className = "path-fade path-visible space-y-16";
+                contentBiz.className = "path-fade path-hidden space-y-16";
+
+                eduRd.className = "path-fade path-visible space-y-8 max-w-3xl";
+                eduBiz.className = "path-fade path-hidden space-y-8 max-w-3xl";
+            } else {
+                // Active Button Styling
+                btnBiz.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm";
+                btnRd.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900";
+
+                // Fade Text & Content
+                bioBiz.className = "path-fade path-visible text-lg text-slate-600 leading-relaxed font-normal";
+                bioRd.className = "path-fade path-hidden text-lg text-slate-600 leading-relaxed font-normal";
+
+                contentBiz.className = "path-fade path-visible space-y-16";
+                contentRd.className = "path-fade path-hidden space-y-16";
+
+                eduBiz.className = "path-fade path-visible space-y-8 max-w-3xl";
+                eduRd.className = "path-fade path-hidden space-y-8 max-w-3xl";
+            }
+        }
+
+        // Publications Filter Logic
+        function filterPubs(cat) {
+            const items = document.querySelectorAll('.pub-item');
+            const btns = ['all', 'nanotech', 'biomaterials'];
+
+            btns.forEach(b => {
