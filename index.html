@@ -338,7 +338,6 @@
         <!-- PUBLICATIONS SHOWCASE (TABLE/GRID LAYOUT) -->
         <section id="publications" class="py-20 border-b border-slate-200/80 bg-white">
             <div class="max-w-6xl mx-auto px-6">
-                
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
                     <div>
                         <p class="text-xs font-mono uppercase tracking-widest text-slate-400 mb-2">Peer-Reviewed Contributions</p>
@@ -354,7 +353,7 @@
                 </div>
 
                 <!-- Minimalist Publications Table/List -->
-                <div class="divide-y divide-slate-200/80 border-t border-b border-slate-200/80" id="pub-container">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="pub-container">
                     
                    <!-- Paper 1: Cancer Letters -->
     <div class="bg-white p-6 rounded-xl border border-slate-200/80 flex flex-col justify-between">
@@ -510,46 +509,48 @@
         lucide.createIcons();
 
         // Lens Switcher Logic
-        function setLens(lens) {
-            const bioRd = document.getElementById('bio-rd');
-            const bioBiz = document.getElementById('bio-biz');
-            const contentRd = document.getElementById('content-rd');
-            const contentBiz = document.getElementById('content-biz');
-            const eduRd = document.getElementById('edu-rd');
-            const eduBiz = document.getElementById('edu-biz');
-            const btnRd = document.getElementById('btn-lens-rd');
-            const btnBiz = document.getElementById('btn-lens-biz');
+        
+function setLens(lens) {
+    const bioRd = document.getElementById('bio-rd');
+    const bioBiz = document.getElementById('bio-biz');
+    const contentRd = document.getElementById('content-rd');
+    const contentBiz = document.getElementById('content-biz');
+    const eduRd = document.getElementById('edu-rd');
+    const eduBiz = document.getElementById('edu-biz');
+    const btnRd = document.getElementById('btn-lens-rd');
+    const btnBiz = document.getElementById('btn-lens-biz');
 
-            if (lens === 'rd') {
-                // Active Button Styling
-                btnRd.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm";
-                btnBiz.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900";
+    if (lens === 'rd') {
+        // Active Button Styling
+        btnRd.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm";
+        btnBiz.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900";
 
-                // Fade Text & Content
-                bioRd.className = "path-fade path-visible text-lg text-slate-600 leading-relaxed font-normal";
-                bioBiz.className = "path-fade path-hidden text-lg text-slate-600 leading-relaxed font-normal";
-                
-                contentRd.className = "path-fade path-visible space-y-16";
-                contentBiz.className = "path-fade path-hidden space-y-16";
+        // Fade Text & Content
+        bioRd.className = "path-fade path-visible text-lg text-slate-600 leading-relaxed font-normal";
+        bioBiz.className = "path-fade path-hidden text-lg text-slate-600 leading-relaxed font-normal";
 
-                eduRd.className = "path-fade path-visible space-y-8 max-w-3xl";
-                eduBiz.className = "path-fade path-hidden space-y-8 max-w-3xl";
-            } else {
-                // Active Button Styling
-                btnBiz.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm";
-                btnRd.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900";
+        contentRd.className = "path-fade path-visible space-y-16";
+        contentBiz.className = "path-fade path-hidden space-y-16";
 
-                // Fade Text & Content
-                bioBiz.className = "path-fade path-visible text-lg text-slate-600 leading-relaxed font-normal";
-                bioRd.className = "path-fade path-hidden text-lg text-slate-600 leading-relaxed font-normal";
+        eduRd.className = "path-fade path-visible space-y-8 max-w-3xl";
+        eduBiz.className = "path-fade path-hidden space-y-8 max-w-3xl";
+        } 
+        else {
+        // Active Button Styling
+        btnBiz.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm";
+        btnRd.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900";
 
-                contentBiz.className = "path-fade path-visible space-y-16";
-                contentRd.className = "path-fade path-hidden space-y-16";
+        // Fade Text & Content
+        bioBiz.className = "path-fade path-visible text-lg text-slate-600 leading-relaxed font-normal";
+        bioRd.className = "path-fade path-hidden text-lg text-slate-600 leading-relaxed font-normal";
 
-                eduBiz.className = "path-fade path-visible space-y-8 max-w-3xl";
-                eduRd.className = "path-fade path-hidden space-y-8 max-w-3xl";
+        contentBiz.className = "path-fade path-visible space-y-16";
+        contentRd.className = "path-fade path-hidden space-y-16";
+
+        eduBiz.className = "path-fade path-visible space-y-8 max-w-3xl";
+        eduRd.className = "path-fade path-hidden space-y-8 max-w-3xl";
             }
-        }
+}
 
         // Publications Filter Logic
         function filterPubs(cat) {
