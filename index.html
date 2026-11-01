@@ -102,16 +102,6 @@
 
     <main>
         <!-- Hero Section -->
-        <!-- HERO ACTION BUTTONS -->
-<div class="flex flex-wrap items-center gap-4 pt-2">
-  <a href="#projects" class="px-6 py-3 rounded-lg bg-slate-900 text-white font-medium text-sm hover:bg-slate-800 transition-colors inline-flex items-center gap-2">
-    Explore my work &rarr;
-  </a>
-  <a href="Scientist_Resume.pdf" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium text-sm hover:bg-slate-50 transition-colors">
-    Download Resume &nearr;
-  </a>
-</div>
-
                     <!-- Category Tag -->
                     <p class="text-xs font-mono uppercase tracking-widest text-teal-700 font-semibold mb-6">
                         Biotechnology · Molecular Microbiology · Clinical Research
@@ -134,6 +124,16 @@
                             I am Janmey Shah, a biotechnology specialist focused on clinical trial operations, Good Clinical Practice (GCP) compliance, Standard Operating Procedure (SOP) development, data integrity risk mitigation, and cross-functional bioprocess technical transfer.
                         </p>
                     </div>
+        
+        <!-- HERO ACTION BUTTONS -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+  <a href="#projects" class="px-6 py-3 rounded-lg bg-slate-900 text-white font-medium text-sm hover:bg-slate-800 transition-colors inline-flex items-center gap-2">
+    Explore my work &rarr;
+  </a>
+  <a href="Scientist_Resume.pdf" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium text-sm hover:bg-slate-50 transition-colors">
+    Download Resume &nearr;
+  </a>
+</div>
                     <!-- Subtext Badge -->
                     <div class="mt-12 flex items-center gap-2 text-xs font-mono text-slate-500">
                         <span class="w-2 h-2 rounded-full bg-teal-600"></span>
@@ -356,71 +356,57 @@
                 <!-- Minimalist Publications Table/List -->
                 <div class="divide-y divide-slate-200/80 border-t border-b border-slate-200/80" id="pub-container">
                     
-                    <!-- Paper 1 -->
-                    <div class="pub-item nanotech py-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                        <div class="max-w-3xl">
-                            <div class="text-xs font-mono text-slate-400 mb-1">Journal of Nanobiotechnology · 2023</div>
-                            <h3 class="text-base font-bold text-slate-900">
-                                Cytotoxic and toxicogenomic evaluation of functionalized metal oxide nanoparticles in human microglial cells.
-                            </h3>
-                            <p class="text-xs text-slate-600 mt-1">
-                                Authors: Shah, J. et al. — Evaluated dose-dependent oxidative stress and apoptosis mechanisms in HMC3 cell lines.
-                            </p>
-                        </div>
-                        <a href="https://doi.org" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-teal-700 hover:underline whitespace-nowrap">
-                            doi.org/10.1016 <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
+                   <!-- Paper 1: Cancer Letters -->
+    <div class="bg-white p-6 rounded-xl border border-slate-200/80 flex flex-col justify-between">
+      <div>
+        <span class="text-[11px] font-mono text-teal-700">Cancer Letters • Dec 2025 • Co-Author</span>
+        <h3 class="text-base font-bold text-slate-900 mt-2 mb-2">RAGE signaling pathway in glioblastoma and cognitive decline</h3>
+        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+          Supported literature synthesis, data collection, and research discussions focusing on the Receptor for Advanced Glycation Endproducts (RAGE) axis in neuro-oncology models and associated cognitive pathways.
+        </p>
+      </div>
+      <div class="text-[11px] font-mono text-slate-400">Literature Synthesis &bull; Mechanistic Review</div>
+    </div>
 
-                    <!-- Paper 2 -->
-                    <div class="pub-item biomaterials py-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                        <div class="max-w-3xl">
-                            <div class="text-xs font-mono text-slate-400 mb-1">ACS Applied Bio Materials · 2022</div>
-                            <h3 class="text-base font-bold text-slate-900">
-                                Surface characterization and hemocompatibility analysis of bio-composite polymeric scaffolds.
-                            </h3>
-                            <p class="text-xs text-slate-600 mt-1">
-                                Authors: Shah, J. et al. — Measured protein adsorption kinetics and cellular compatibility across modified scaffold surfaces.
-                            </p>
-                        </div>
-                        <a href="https://doi.org" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-teal-700 hover:underline whitespace-nowrap">
-                            doi.org/10.1021 <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
+    <!-- Paper 2: Brain Research -->
+    <div class="bg-white p-6 rounded-xl border border-slate-200/80 flex flex-col justify-between">
+      <div>
+        <span class="text-[11px] font-mono text-teal-700">Brain Research • Jun 2025 • Co-Author</span>
+        <h3 class="text-base font-bold text-slate-900 mt-2 mb-2">Pharmacological and therapeutic innovation to mitigate radiation-induced cognitive decline</h3>
+        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+          Contributed to background research, literature evaluation, and manuscript support mapping pharmacological and therapeutic neuroprotection strategies against radiation exposure.
+        </p>
+      </div>
+      <div class="text-[11px] font-mono text-slate-400">Therapeutic Review &bull; Data Curation</div>
+    </div>
 
-                    <!-- Paper 3 -->
-                    <div class="pub-item nanotech py-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                        <div class="max-w-3xl">
-                            <div class="text-xs font-mono text-slate-400 mb-1">Toxicology in Vitro · 2021</div>
-                            <h3 class="text-base font-bold text-slate-900">
-                                Mechanistic insights into cellular internalization pathways of silica-coated bio-nanomaterials.
-                            </h3>
-                            <p class="text-xs text-slate-600 mt-1">
-                                Authors: Shah, J. et al. — Mapped endocytic pathways using spectroscopic and fluorescence microscopy sweeps.
-                            </p>
-                        </div>
-                        <a href="https://doi.org" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-teal-700 hover:underline whitespace-nowrap">
-                            doi.org/10.1016 <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
+    <!-- Paper 3: Toxicology Reports (Nanoplastics & Graphene Oxide) -->
+    <div class="bg-white p-6 rounded-xl border border-slate-200/80 flex flex-col justify-between">
+      <div>
+        <span class="text-[11px] font-mono text-teal-700">Toxicology Reports • Dec 2024 • Researcher</span>
+        <h3 class="text-base font-bold text-slate-900 mt-2 mb-2">Fluorescent nanoplastics increase toxic effects of Graphene oxide in Scenedesmus obliquus</h3>
+        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+          Executed standardized Algal Growth Inhibition Assays (OECD 201) and fluorescence microscopy to evaluate combination nanotoxicology, quantifying reactive oxygen species (ROS) and physiological stress markers.
+        </p>
+      </div>
+      <div class="pt-3 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
+        <span>OECD 201 Assays</span><span>•</span><span>ROS Generation</span><span>•</span><span>Fluorescence Microscopy</span>
+      </div>
+    </div>
 
-                    <!-- Paper 4 -->
-                    <div class="pub-item biomaterials py-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                        <div class="max-w-3xl">
-                            <div class="text-xs font-mono text-slate-400 mb-1">Biochemical Engineering Journal · 2021</div>
-                            <h3 class="text-base font-bold text-slate-900">
-                                Quantitative enzymatic assay protocols for evaluating substrate specificity in microbial enzymes.
-                            </h3>
-                            <p class="text-xs text-slate-600 mt-1">
-                                Authors: Shah, J. et al. — Established standardized kinetic assays to determine phosphatase parameters under varying pH states.
-                            </p>
-                        </div>
-                        <a href="https://doi.org" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-teal-700 hover:underline whitespace-nowrap">
-                            doi.org/10.1016 <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
-
-                </div>
+    <!-- Paper 4: Toxicology Reports (Diclofenac & Boron Nitride) -->
+    <div class="bg-white p-6 rounded-xl border border-slate-200/80 flex flex-col justify-between">
+      <div>
+        <span class="text-[11px] font-mono text-teal-700">Toxicology Reports • Dec 2024 • Researcher</span>
+        <h3 class="text-base font-bold text-slate-900 mt-2 mb-2">Diclofenac enhances Boron nitride nanoparticle toxicity in microalgae</h3>
+        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+          Conducted experimental bioassays and physiological marker tracking at the Centre for Nanobiotechnology (VIT Vellore), generating data on oxidative stress and cellular interaction pathways in microalgal models.
+        </p>
+      </div>
+      <div class="pt-3 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
+        <span>Oxidative Stress Assays</span><span>•</span><span>Physiological Markers</span><span>•</span><span>Ecotoxicology</span>
+      </div>
+    </div>
 
             </div>
         </section>
@@ -437,9 +423,9 @@
                     <div class="border-l-2 border-slate-900 pl-6 py-1">
                         <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
                             <span>MSc Biotechnology</span>
-                            <span>2022 – 2023 · Leeds, UK</span>
+                            <span>2025 – 2026 · Leeds, UK</span>
                         </div>
-                        <h3 class="text-base font-bold text-slate-900">University of Leeds</h3>
+                        <h3 class="text-base font-bold text-slate-900"> University of Leeds</h3>
                         <p class="text-xs text-slate-600 mt-2 leading-relaxed">
                             <strong>R&D Focus:</strong> Advanced molecular biology, structural enzyme modeling (AlphaFold2), SnapGene plasmid engineering, and recombinant protein expression protocols in microbial systems.
                         </p>
@@ -449,11 +435,11 @@
                     <div class="border-l-2 border-slate-300 pl-6 py-1">
                         <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
                             <span>Research Training & Fellowships</span>
-                            <span>Mumbai & Vellore, IN</span>
+                            <span> 2020 – 2024 · Vellore, IN</span>
                         </div>
-                        <h3 class="text-base font-bold text-slate-900">ACTREC & VIT Centre for Nanotechnology (CNBT)</h3>
+                        <h3 class="text-base font-bold text-slate-900"> VIT - Vellore Institute of Technology </h3>
                         <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                            <strong>Lab Expertise:</strong> Hands-on mammalian cell culture (SH-SY5Y, glioblastoma, HMC3), quantitative Western Blotting, chemiluminescent ELISA, and nanomaterial toxicity profiling.
+                            <strong> Lab Expertise:</strong> Built a robust theoretical and practical foundation in core biotechnology, molecular biology, and bioanalytical techniques. Engaged in early-stage laboratory experimentation and collaborative scientific inquiry that laid the groundwork for advanced postgraduate research at the University of Leeds.
                         </p>
                     </div>
                 </div>
@@ -476,7 +462,7 @@
                     <div class="border-l-2 border-slate-300 pl-6 py-1">
                         <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
                             <span>Clinical Governance & Bio-Safety Compliance</span>
-                            <span>Mumbai & Vellore, IN</span>
+                            <span> Vellore, IN</span>
                         </div>
                         <h3 class="text-base font-bold text-slate-900">ACTREC Clinical Centre & VIT CNBT</h3>
                         <p class="text-xs text-slate-600 mt-2 leading-relaxed">
