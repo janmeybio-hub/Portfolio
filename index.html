@@ -89,11 +89,11 @@
 
                 <!-- Editorial Lens Toggle Switch -->
                 <div class="bg-slate-200/70 p-1 rounded-full flex items-center border border-slate-300/50 text-xs font-medium">
-                    <button id="btn-lens-rd" onclick="setLens('rd')" class="px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm">
-                        R&D Lens
+                    <button id="btn-lens-rd" class="px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm">
+                    R&D Lens
                     </button>
-                    <button id="btn-lens-biz" onclick="setLens('biz')" class="px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900">
-                        Business & Ops
+                    <button id="btn-lens-biz" class="px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900">
+                    Business & Ops
                     </button>
                 </div>
             </div>
@@ -515,6 +515,13 @@
         lucide.createIcons();
         // Lens Switcher Logic
 function setLens(lens) {
+    // Wire up buttons programmatically to avoid scope issues
+document.getElementById('btn-lens-rd').addEventListener('click', function() {
+  setLens('rd');
+});
+document.getElementById('btn-lens-biz').addEventListener('click', function() {
+  setLens('biz');
+});
   // 1. Elements to Toggle
   const rdElements = document.querySelectorAll('.lens-rd');
   const bizElements = document.querySelectorAll('.lens-biz');
