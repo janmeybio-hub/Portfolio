@@ -46,20 +46,46 @@
             }
         }
     </script>
-    <style>
-/* Update button colors dynamically based on which radio is checked */
-#radio-rd:checked ~ * #btn-lens-rd {
-  background-color: #0f172a; color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-}
-#radio-rd:checked ~ * #btn-lens-biz {
-  background-color: transparent; color: #475569;
-}
-#radio-biz:checked ~ * #btn-lens-biz {
-  background-color: #0f172a; color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-}
-#radio-biz:checked ~ * #btn-lens-rd {
-  background-color: transparent; color: #475569;
-}
+<style>
+  /* 1. Default State: Show R&D, Hide Business */
+  .lens-rd {
+    display: block !important;
+  }
+  .lens-biz {
+    display: none !important;
+  }
+
+  /* 2. When Business Radio is Checked: Hide R&D, Show Business */
+  #radio-biz:checked ~ header .lens-rd,
+  #radio-biz:checked ~ main .lens-rd,
+  #radio-biz:checked ~ footer .lens-rd {
+    display: none !important;
+  }
+
+  #radio-biz:checked ~ header .lens-biz,
+  #radio-biz:checked ~ main .lens-biz,
+  #radio-biz:checked ~ footer .lens-biz {
+    display: block !important;
+  }
+
+  /* 3. Button Active States */
+  #radio-rd:checked ~ header #btn-lens-rd {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+  }
+  #radio-rd:checked ~ header #btn-lens-biz {
+    background-color: transparent !important;
+    color: #475569 !important;
+  }
+
+  #radio-biz:checked ~ header #btn-lens-biz {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+  }
+  #radio-biz:checked ~ header #btn-lens-rd {
+    background-color: transparent !important;
+    color: #475569 !important;
+  }
 </style>
 </head>
 <body class="font-sans text-slate-900 bg-canvas antialiased lens-rd-view">
@@ -82,16 +108,6 @@
     Business & Ops
   </label>
 </div>
-            <!-- Visible Lens Toggle Container -->
-<div class="bg-slate-200/70 p-1 rounded-full flex items-center border border-slate-300/50 text-xs font-medium">
-  <label for="radio-rd" id="btn-lens-rd" class="cursor-pointer px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm">
-    R&D Lens
-  </label>
-  <label for="radio-biz" id="btn-lens-biz" class="cursor-pointer px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900">
-    Business & Ops
-  </label>
-</div>
-        </div>
     </header>
 
     <main>
