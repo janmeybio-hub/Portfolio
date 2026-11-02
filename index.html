@@ -47,27 +47,19 @@
         }
     </script>
     <style>
-/* By default, show R&D, hide Business */
-  .lens-biz { display: none !important; }
-  .lens-rd { display: block !important; }
-
-  /* When Business radio is checked, swap them */
-  #radio-biz:checked ~ * .lens-biz { display: block !important; }
-  #radio-biz:checked ~ * .lens-rd { display: none !important; }
-
-  /* Update button colors dynamically based on which radio is checked */
-  #radio-rd:checked ~ * #btn-lens-rd {
-    background-color: #0f172a; color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  }
-  #radio-rd:checked ~ * #btn-lens-biz {
-    background-color: transparent; color: #475569;
-  }
-  #radio-biz:checked ~ * #btn-lens-biz {
-    background-color: #0f172a; color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  }
-  #radio-biz:checked ~ * #btn-lens-rd {
-    background-color: transparent; color: #475569;
-  }
+/* Update button colors dynamically based on which radio is checked */
+#radio-rd:checked ~ * #btn-lens-rd {
+  background-color: #0f172a; color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+#radio-rd:checked ~ * #btn-lens-biz {
+  background-color: transparent; color: #475569;
+}
+#radio-biz:checked ~ * #btn-lens-biz {
+  background-color: #0f172a; color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+#radio-biz:checked ~ * #btn-lens-rd {
+  background-color: transparent; color: #475569;
+}
 </style>
 </head>
 <body class="font-sans text-slate-900 bg-canvas antialiased lens-rd-view">
@@ -90,16 +82,15 @@
     Business & Ops
   </label>
 </div>
-                <!-- Editorial Lens Toggle Switch -->
-                <div class="bg-slate-200/70 p-1 rounded-full flex items-center border border-slate-300/50 text-xs font-medium">
-                    <button id="btn-lens-rd" class="px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm">
-                    R&D Lens
-                    </button>
-                    <button id="btn-lens-biz" class="px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900">
-                    Business & Ops
-                    </button>
-                </div>
-            </div>
+            <!-- Visible Lens Toggle Container -->
+<div class="bg-slate-200/70 p-1 rounded-full flex items-center border border-slate-300/50 text-xs font-medium">
+  <label for="radio-rd" id="btn-lens-rd" class="cursor-pointer px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm">
+    R&D Lens
+  </label>
+  <label for="radio-biz" id="btn-lens-biz" class="cursor-pointer px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900">
+    Business & Ops
+  </label>
+</div>
         </div>
     </header>
 
@@ -124,9 +115,9 @@
                         </p>
 
                         <!-- Business Bio Text -->
-                       <div id="bio-biz" class="lens-biz hidden">
+                       <div id="bio-biz" class="lens-biz">
                         <p class="text-lg text-slate-600 leading-relaxed font-normal">
-                            I am Janmey Shah, a biotechnology specialist focused on clinical trial operations, Good Clinical Practice (GCP) compliance, Standard Operating Procedure (SOP) development, data integrity risk mitigation, and cross-functional bioprocess technical transfer.
+                           I am Janmey Shah, a biotechnology specialist leveraging expertise across market intelligence, bio-business development, and clinical operations. I bridge the gap between technical bioprocess R&D and commercial viability—evaluating market landscapes, streamlining GCP compliance, and identifying strategic growth opportunities for emerging therapies.
                         </p> 
                         </div>
         <!-- HERO ACTION BUTTONS -->
@@ -177,6 +168,57 @@
     <div class="text-xs text-slate-500">Performed Gibson Assembly cloning and recombinant protein expression of SurE within an NRPS expression system</div>
   </div>
 
+<!-- Business & Ops Capabilities Container -->
+<div class="lens-biz">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    
+    <!-- Card 1: Business Development & Market Intelligence -->
+    <div class="p-6 bg-slate-50/50 rounded-xl border border-slate-200/60 hover:border-slate-300 transition-all">
+      <div class="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-sm mb-4">
+        01
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 mb-2">Market Analysis & Strategy</h3>
+      <p class="text-sm text-slate-600 leading-relaxed mb-4">
+        Evaluating biopharma market landscapes, competitive dynamics, and asset viability to identify commercialization pathways for novel therapies.
+      </p>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Market Intelligence</span>
+        <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Asset Valuation</span>
+        <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Competitive Benchmarking</span>
+      </div>
+    </div>
+
+    <!-- Card 2: Bio-Business Development & Tech Transfer -->
+    <div class="p-6 bg-slate-50/50 rounded-xl border border-slate-200/60 hover:border-slate-300 transition-all">
+      <div class="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-sm mb-4">
+        02
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 mb-2">Bio-Business Development</h3>
+      <p class="text-sm text-slate-600 leading-relaxed mb-4">
+        Bridging laboratory R&D with business development—translating complex bioprocess data into actionable investment cases and partner pipelines.
+      </p>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Partnering Strategy</span>
+        <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Tech Transfer</span>
+        <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Pitch & Proposal Dev</span>
+      </div>
+    </div>
+
+    <!-- Card 3: Clinical Operations & Quality Governance -->
+    <div class="p-6 bg-slate-50/50 rounded-xl border border-slate-200/60 hover:border-slate-300 transition-all">
+      <div class="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-sm mb-4">
+        03
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 mb-2">Clinical Ops & Regulatory</h3>
+      <p class="text-sm text-slate-600 leading-relaxed mb-4">
+        Structuring operational workflows, ensuring GCP compliance, standardizing SOPs, and safeguarding data integrity across clinical research stages.
+      </p>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">GCP & GLP Standards</span>
+        <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">SOP Design</span>
+        <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Risk Mitigation</span>
+      </div>
+    </div>
 </div>
 
   <!-- Featured Projects -->
@@ -264,7 +306,7 @@
 </div>
 
                 <!-- BUSINESS & OPERATIONS PATH CONTENT -->
-                <div id="projects-biz" class="lens-biz hidden">
+                <div id="projects-biz" class="lens-biz">
                     <!-- Competencies List -->
                     <div>
                         <h2 class="text-xs font-mono uppercase tracking-widest text-slate-400 mb-6">Operations & Governance Competencies</h2>
@@ -453,7 +495,7 @@
                 </div>
 
                 <!-- Business & Operations Lens Education Mapping -->
-                <div id="edu-biz" class="lens-biz path-fade path-hidden space-y-8 max-w-3xl">
+                <div id="edu-biz" class="lens-biz space-y-8 max-w-3xl">
                     <!-- Item 1 -->
                     <div class="border-l-2 border-slate-900 pl-6 py-1">
                         <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
@@ -486,7 +528,7 @@
             <div class="max-w-6xl mx-auto px-6 text-center">
                 <h2 class="text-3xl font-bold text-slate-900 tracking-tight mb-4">Get in Touch</h2>
                 <p class="text-sm text-slate-600 max-w-md mx-auto mb-8">
-                    Available for R&D Scientist (Technical Services / Molecular Biology) and Clinical Research Associate (CRA) roles.
+                    Available for R&D Scientist (Technical Services / Molecular Biology) and Business Development roles.
                 </p>
 
                 <div class="flex items-center justify-center gap-6 text-xs font-mono">
