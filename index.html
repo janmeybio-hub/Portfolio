@@ -46,29 +46,26 @@
             }
         }
     </script>
-<style>
-  /* 1. Default State: Show R&D, Hide Business */
-  .lens-rd {
-    display: block !important;
-  }
+ <style>
+  /* Default State: Hide Business blocks */
   .lens-biz {
     display: none !important;
   }
 
-  /* 2. When Business Radio is Checked: Hide R&D, Show Business */
-  #radio-biz:checked ~ header .lens-rd,
+  /* When Business Radio is Checked: Hide R&D, Show Business */
   #radio-biz:checked ~ main .lens-rd,
+  #radio-biz:checked ~ header .lens-rd,
   #radio-biz:checked ~ footer .lens-rd {
     display: none !important;
   }
 
-  #radio-biz:checked ~ header .lens-biz,
   #radio-biz:checked ~ main .lens-biz,
+  #radio-biz:checked ~ header .lens-biz,
   #radio-biz:checked ~ footer .lens-biz {
-    display: block !important;
+    display: block !important; /* or unhide */
   }
 
-  /* 3. Button Active States */
+  /* Button Styling */
   #radio-rd:checked ~ header #btn-lens-rd {
     background-color: #0f172a !important;
     color: #ffffff !important;
