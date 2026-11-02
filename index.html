@@ -115,12 +115,14 @@
                     <!-- Dynamic Bio Subtext -->
                     <div class="relative min-h-[90px] mb-10">
                         <!-- R&D Bio Text -->
-                        <p id="bio-rd" class="path-fade path-visible text-lg text-slate-600 leading-relaxed font-normal">
+                           <div id="bio-rd" class="lens-rd">
+                        <p class="text-lg text-slate-600 leading-relaxed font-normal">
                             I am a biotechnology researcher with experience supporting oncology, nanotechnology, and preclinical research programmes across academic and clinical research environments. My work has involved coordinating experimental workflows, maintaining GLP-compliant documentation, synthesising scientific evidence, managing assay data, and contributing to four peer-reviewed publications
                         </p>
 
                         <!-- Business Bio Text -->
-                        <p id="bio-biz" class="path-fade path-hidden text-lg text-slate-600 leading-relaxed font-normal">
+                       <div id="bio-biz" class="lens-biz hidden">
+                        <p class="text-lg text-slate-600 leading-relaxed font-normal">
                             I am Janmey Shah, a biotechnology specialist focused on clinical trial operations, Good Clinical Practice (GCP) compliance, Standard Operating Procedure (SOP) development, data integrity risk mitigation, and cross-functional bioprocess technical transfer.
                         </p>
         <!-- HERO ACTION BUTTONS -->
@@ -258,7 +260,7 @@
 </div>
 
                 <!-- BUSINESS & OPERATIONS PATH CONTENT -->
-                <div id="content-biz" class="path-fade path-hidden space-y-16">
+                <div id="projects-biz" class="lens-biz hidden">
                     <!-- Competencies List -->
                     <div>
                         <h2 class="text-xs font-mono uppercase tracking-widest text-slate-400 mb-6">Operations & Governance Competencies</h2>
@@ -420,7 +422,7 @@
                 <h2 class="text-3xl font-bold text-slate-900 tracking-tight mb-12">Education & Academic Foundations</h2>
 
                 <!-- R&D Lens Education Mapping -->
-                <div id="edu-rd" class="path-fade path-visible space-y-8 max-w-3xl">
+                <div id="edu-rd" class="lens-rd path-fade path-visible space-y-8 max-w-3xl">
                     <!-- Item 1 -->
                     <div class="border-l-2 border-slate-900 pl-6 py-1">
                         <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
@@ -447,7 +449,7 @@
                 </div>
 
                 <!-- Business & Operations Lens Education Mapping -->
-                <div id="edu-biz" class="path-fade path-hidden space-y-8 max-w-3xl">
+                <div id="edu-biz" class="lens-biz path-fade path-hidden space-y-8 max-w-3xl">
                     <!-- Item 1 -->
                     <div class="border-l-2 border-slate-900 pl-6 py-1">
                         <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
@@ -510,54 +512,51 @@
     <script>
         // Initialize Icons
         lucide.createIcons();
-
         // Lens Switcher Logic
-        
 function setLens(lens) {
-    const bioRd = document.getElementById('bio-rd');
-    const bioBiz = document.getElementById('bio-biz');
-    const contentRd = document.getElementById('content-rd');
-    const contentBiz = document.getElementById('content-biz');
-    const eduRd = document.getElementById('edu-rd');
-    const eduBiz = document.getElementById('edu-biz');
-    const btnRd = document.getElementById('btn-lens-rd');
-    const btnBiz = document.getElementById('btn-lens-biz');
+  // 1. Elements to Toggle
+  const rdElements = document.querySelectorAll('.lens-rd');
+  const bizElements = document.querySelectorAll('.lens-biz');
+  
+  // 2. Buttons
+  const btnRd = document.getElementById('btn-rd');
+  const btnBiz = document.getElementById('btn-biz');
 
-    if (lens === 'rd') {
-        // Active Button Styling
-        btnRd.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm";
-        btnBiz.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900";
+  if (lens === 'rd') {
+    // Show R&D, Hide Business
+    rdElements.forEach(el => {
+      el.classList.remove('hidden', 'path-hidden');
+      el.classList.add('path-visible');
+    });
+    bizElements.forEach(el => {
+      el.classList.remove('path-visible');
+      el.classList.add('hidden', 'path-hidden');
+    });
 
-        // Fade Text & Content
-        bioRd.className = "path-fade path-visible text-lg text-slate-600 leading-relaxed font-normal";
-        bioBiz.className = "path-fade path-hidden text-lg text-slate-600 leading-relaxed font-normal";
+    // Button Styling (R&D Active)
+    if (btnRd) {
+      btnRd.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm";
+    }
+    if (btnBiz) {
+      btnBiz.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900";
+    }
+  } else if (lens === 'biz') {
+    // Show Business, Hide R&D
+    bizElements.forEach(el => {
+      el.classList.remove('hidden', 'path-hidden');
+      el.classList.add('path-visible');
+    });
+    rdElements.forEach(el => {
+      el.classList.remove('path-visible');
+      el.classList.add('hidden', 'path-hidden');
+    });
 
-        contentRd.className = "path-fade path-visible space-y-16";
-        contentBiz.className = "path-fade path-hidden space-y-16";
-
-        eduRd.className = "path-fade path-visible space-y-8 max-w-3xl";
-        eduBiz.className = "path-fade path-hidden space-y-8 max-w-3xl";
-        } 
-        else {
-        // Active Button Styling
-        btnBiz.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm";
-        btnRd.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900";
-
-        // Fade Text & Content
-        bioBiz.className = "path-fade path-visible text-lg text-slate-600 leading-relaxed font-normal";
-        bioRd.className = "path-fade path-hidden text-lg text-slate-600 leading-relaxed font-normal";
-
-        contentBiz.className = "path-fade path-visible space-y-16";
-        contentRd.className = "path-fade path-hidden space-y-16";
-
-        eduBiz.className = "path-fade path-visible space-y-8 max-w-3xl";
-        eduRd.className = "path-fade path-hidden space-y-8 max-w-3xl";
-            }
+    // Button Styling (Business Active)
+    if (btnBiz) {
+      btnBiz.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm";
+    }
+    if (btnRd) {
+      btnRd.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900";
+    }
+  }
 }
-
-        // Publications Filter Logic
-        function filterPubs(cat) {
-            const items = document.querySelectorAll('.pub-item');
-            const btns = ['all', 'nanotech', 'biomaterials'];
-
-            btns.forEach(b => {
