@@ -46,29 +46,38 @@
             }
         }
     </script>
- <style>
-  /* Default State: Hide Business blocks */
+<style>
+  /* 1. Default State: Hide all Business elements */
   .lens-biz {
     display: none !important;
   }
 
-  /* When Business Radio is Checked: Hide R&D, Show Business */
-  #radio-biz:checked ~ main .lens-rd,
+  /* 2. When Business Radio is Checked: Hide R&D, Show Business */
   #radio-biz:checked ~ header .lens-rd,
+  #radio-biz:checked ~ main .lens-rd,
   #radio-biz:checked ~ footer .lens-rd {
     display: none !important;
   }
 
-  #radio-biz:checked ~ main .lens-biz,
   #radio-biz:checked ~ header .lens-biz,
+  #radio-biz:checked ~ main .lens-biz,
   #radio-biz:checked ~ footer .lens-biz {
-    display: block !important; /* or unhide */
+    display: block !important;
   }
 
-  /* Button Styling */
+  /* If a business element is a Grid or Flex container, preserve layout */
+  #radio-biz:checked ~ main div.lens-biz.grid {
+    display: grid !important;
+  }
+  #radio-biz:checked ~ main div.lens-biz.flex {
+    display: flex !important;
+  }
+
+  /* 3. Toggle Button State Styling */
   #radio-rd:checked ~ header #btn-lens-rd {
     background-color: #0f172a !important;
     color: #ffffff !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
   }
   #radio-rd:checked ~ header #btn-lens-biz {
     background-color: transparent !important;
@@ -78,6 +87,7 @@
   #radio-biz:checked ~ header #btn-lens-biz {
     background-color: #0f172a !important;
     color: #ffffff !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
   }
   #radio-biz:checked ~ header #btn-lens-rd {
     background-color: transparent !important;
