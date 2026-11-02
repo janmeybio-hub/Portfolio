@@ -124,7 +124,8 @@
                        <div id="bio-biz" class="lens-biz hidden">
                         <p class="text-lg text-slate-600 leading-relaxed font-normal">
                             I am Janmey Shah, a biotechnology specialist focused on clinical trial operations, Good Clinical Practice (GCP) compliance, Standard Operating Procedure (SOP) development, data integrity risk mitigation, and cross-functional bioprocess technical transfer.
-                        </p>
+                        </p> 
+                        </div>
         <!-- HERO ACTION BUTTONS -->
 <div class="flex flex-wrap items-center gap-4 pt-2">
   <a href="#projects" class="px-6 py-3 rounded-lg bg-slate-900 text-white font-medium text-sm hover:bg-slate-800 transition-colors inline-flex items-center gap-2">
@@ -145,7 +146,7 @@
 
         <!-- DYNAMIC CAPABILITIES & PROJECTS SECTION -->
        <!-- R&D PATH CONTENT -->
-<div id="content-rd" class="path-fade path-visible space-y-16">
+<div id="content-rd" class="lens-rd path-fade path-visible space-y-16">
   <!-- Core Technical Capabilities Updates -->
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
   
@@ -519,8 +520,8 @@ function setLens(lens) {
   const bizElements = document.querySelectorAll('.lens-biz');
   
   // 2. Buttons
-  const btnRd = document.getElementById('btn-rd');
-  const btnBiz = document.getElementById('btn-biz');
+const btnRd = document.getElementById('btn-lens-rd');
+const btnBiz = document.getElementById('btn-lens-biz');
 
   if (lens === 'rd') {
     // Show R&D, Hide Business
