@@ -47,18 +47,10 @@
         }
     </script>
     <style>
-  /* Default: Show R&D, Hide Business */
-  .lens-biz-view .lens-biz { display: block !important; }
-  .lens-biz-view .lens-rd { display: none !important; }
-  
-  .lens-rd-view .lens-rd { display: block !important; }
-  .lens-rd-view .lens-biz { display: none !important; }
-  
-  .path-fade {
-    transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+ path-fade {
+    transition: opacity 0.25s ease-in-out;
   }
 </style>
-    </style>
 </head>
 <body class="font-sans text-slate-900 bg-canvas antialiased lens-rd-view">
 
@@ -503,20 +495,31 @@
 
     <!-- INTERACTIVE SCRIPT -->
     <script>
-        // Initialize Icons
-        lucide.createIcons();
-        // Lens Switcher Logic
+// Initialize Icons
+lucide.createIcons();
+
+// Bulletproof Lens Switcher
 function setLens(lens) {
-  const body = document.body;
+  const rdElements = document.querySelectorAll('.lens-rd');
+  const bizElements = document.querySelectorAll('.lens-biz');
+  
   const btnRd = document.getElementById('btn-lens-rd');
   const btnBiz = document.getElementById('btn-lens-biz');
 
   if (lens === 'rd') {
-    body.className = body.className.replace('lens-biz-view', '') + ' lens-rd-view';
+    // Show R&D, Hide Business
+    rdElements.forEach(el => el.classList.remove('hidden'));
+    bizElements.forEach(el => el.classList.add('hidden'));
+
+    // Update Button Styles
     if (btnRd) btnRd.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm";
     if (btnBiz) btnBiz.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900";
   } else {
-    body.className = body.className.replace('lens-rd-view', '') + ' lens-biz-view';
+    // Show Business, Hide R&D
+    bizElements.forEach(el => el.classList.remove('hidden'));
+    rdElements.forEach(el => el.classList.add('hidden'));
+
+    // Update Button Styles
     if (btnBiz) btnBiz.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm";
     if (btnRd) btnRd.className = "px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900";
   }
