@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janmey Shah, MSc | Biotechnology & Clinical Research Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        canvas: '#f8faf9',
+                        slate: {
+                            50: '#f8faf9',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#090d16',
+                        },
+                        teal: {
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            900: '#134e4a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+  /* --- BULLETPROOF DUAL-LENS TOGGLE SYSTEM --- */
+
+  /* 1. Default State: Show R&D, Hide Business completely */
+  .lens-biz {
+    display: none !important;
+  }
+  .lens-rd {
+    display: block !important;
+  }
+
+  /* Fix for R&D Grids/Flex containers so they don't break when visible */
+  div.lens-rd.grid { display: grid !important; }
+  div.lens-rd.flex { display: flex !important; }
+
+  /* 2. When Business Radio is Checked: Hide R&D, Show Business */
+  #radio-biz:checked ~ * .lens-rd {
+    display: none !important;
+  }
+
+  /* Show Business blocks */
+  #radio-biz:checked ~ * .lens-biz {
+    display: block !important;
+  }
+
+  /* Preserve grid and flex layouts for Business sections */
+  #radio-biz:checked ~ * div.lens-biz.grid {
+    display: grid !important;
+  }
+  #radio-biz:checked ~ * div.lens-biz.flex {
+    display: flex !important;
+  }
+
+  /* 3. Dynamic Header Button Color Switches */
+  #radio-rd:checked ~ * #btn-lens-rd {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+  }
+  #radio-rd:checked ~ * #btn-lens-biz {
+    background-color: transparent !important;
+    color: #475569 !important;
+    box-shadow: none !important;
+  }
+
+  #radio-biz:checked ~ * #btn-lens-biz {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+  }
+  #radio-biz:checked ~ * #btn-lens-rd {
+    background-color: transparent !important;
+    color: #475569 !important;
+    box-shadow: none !important;
+  }
+</style>
+</head>
+<body class="font-sans text-slate-900 bg-canvas antialiased">
+    <!-- Hidden radio inputs must be at the very top of the body -->
+    <input type="radio" name="lens-switch" id="radio-rd" checked class="hidden">
+    <input type="radio" name="lens-switch" id="radio-biz" class="hidden">
+
+    <!-- Top Editorial Header -->
+    <header class="sticky top-0 z-50 bg-canvas/90 backdrop-blur-md border-b border-slate-200/80">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand -->
+            <a href="#" class="flex items-center gap-3">
+                <span class="text-base font-bold tracking-tight text-slate-900">Janmey Shah <span class="text-slate-400 font-normal">| MSc</span></span>
+            </a>
+            <!-- Visible Lens Toggle Container -->
+            <div class="bg-slate-200/70 p-1 rounded-full flex items-center border border-slate-300/50 text-xs font-medium">
+                <label for="radio-rd" id="btn-lens-rd" class="cursor-pointer px-3.5 py-1.5 rounded-full transition-all duration-200 bg-slate-900 text-white shadow-sm">
+                    R&D Lens
+                </label>
+                <label for="radio-biz" id="btn-lens-biz" class="cursor-pointer px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900">
+                    Business & Ops
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12 space-y-20">
+        <!-- Hero Section -->
+        <section>
+            <!-- Category Tag -->
+            <p class="text-xs font-mono uppercase tracking-widest text-teal-700 font-semibold mb-6">
+                Biotechnology · Molecular Microbiology · Clinical Research
+            </p>
+            
+            <!-- Main Editorial Title -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.12] mb-8">
+                Research that connects <em class="font-serif italic font-normal text-slate-800">discovery</em> to impact.
+            </h1>
+
+            <!-- Dynamic Bio Subtext -->
+            <div class="relative min-h-[90px] mb-10">
+                <!-- R&D Bio Text -->
+                <div id="bio-rd" class="lens-rd">
+                    <p class="text-lg text-slate-600 leading-relaxed font-normal">
+                        I am a biotechnology researcher with experience supporting oncology, nanotechnology, and preclinical research programmes across academic and clinical research environments. My work has involved coordinating experimental workflows, maintaining GLP-compliant documentation, synthesising scientific evidence, managing assay data, and contributing to four peer-reviewed publications.
+                    </p>
+                </div>
+
+                <!-- Business Bio Text -->
+                <div id="bio-biz" class="lens-biz">
+                    <p class="text-lg text-slate-600 leading-relaxed font-normal">
+                        I am Janmey Shah, a biotechnology specialist leveraging expertise across market intelligence, bio-business development, and clinical operations. I bridge the gap between technical bioprocess R&D and commercial viability—evaluating market landscapes, streamlining GCP compliance, and identifying strategic growth opportunities for emerging therapies.
+                    </p>
+                </div>
+            </div>
+
+            <!-- HERO ACTION BUTTONS -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+                <a href="#projects" class="px-6 py-3 rounded-lg bg-slate-900 text-white font-medium text-sm hover:bg-slate-800 transition-colors inline-flex items-center gap-2">
+                    Explore my work &rarr;
+                </a>
+                <a href="Scientist_Resume.pdf" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium text-sm hover:bg-slate-50 transition-colors">
+                    Download Resume &nearr;
+                </a>
+            </div>
+
+            <!-- Subtext Badge -->
+            <div class="mt-12 flex items-center gap-2 text-xs font-mono text-slate-500">
+                <span class="w-2 h-2 rounded-full bg-teal-600"></span>
+                MSc Biotechnology · University of Leeds · United Kingdom
+            </div>
+        </section>
+
+        <!-- DYNAMIC CAPABILITIES & PROJECTS SECTION -->
+        <section id="projects">
+            <!-- R&D PATH CONTENT -->
+            <div id="content-rd" class="lens-rd space-y-16">
+                <!-- Core Technical Capabilities Updates -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                    <!-- Mammalian Cell Culture -->
+                    <div class="p-4 rounded-lg bg-white border border-slate-200/80">
+                        <div class="font-semibold text-slate-900 mb-1">Mammalian Cell Culture Experience</div>
+                        <div class="text-xs text-slate-500">Maintained SH-SY5Y, HMC3 and U87 cell lines aseptically through expansion, passaging, counting and treatment to support cell-based studies</div>
+                    </div>
+                    <!-- Protein Analytics -->
+                    <div class="p-4 rounded-lg bg-white border border-slate-200/80">
+                        <div class="font-semibold text-slate-900 mb-1">Protein Analytics</div>
+                        <div class="text-xs text-slate-500">Executed quantitative ELISA, Western blotting, and SDS-PAGE quality assessments to evaluate protein expression and cellular assay readouts</div>
+                    </div>
+                    <!-- In Silico Design -->
+                    <div class="p-4 rounded-lg bg-white border border-slate-200/80">
+                        <div class="font-semibold text-slate-900 mb-1">In Silico Design</div>
+                        <div class="text-xs text-slate-500">Applied SnapGene for vector construct design and AlphaFold for structural analysis of assembly proteins and domains</div>
+                    </div>
+                    <!-- Cloning & Assembly -->
+                    <div class="p-4 rounded-lg bg-white border border-slate-200/80">
+                        <div class="font-semibold text-slate-900 mb-1">Cloning & Assembly</div>
+                        <div class="text-xs text-slate-500">Performed Gibson Assembly cloning and recombinant protein expression of SurE within an NRPS expression system</div>
+                    </div>
+                </div>
+
+                <!-- Featured Projects -->
+                <div>
+                    <div class="flex items-center justify-between mb-8">
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-900">Featured Research Projects</h2>
+                        <span class="text-xs font-mono text-slate-400">03 Entries</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Project 1 -->
+                        <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-mono text-teal-700">MSc Thesis Project</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Molecular Engineering & NRPS Biosynthesis</h3>
+                                <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                    Integrated AlphaFold2 structural domain predictions with Gibson Assembly cloning to resolve SurE phosphatase and NRPS expression insolubility in <em>E. coli</em>.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
+                                <span>AlphaFold2</span><span>•</span><span>SnapGene</span><span>•</span><span>Gibson</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-mono text-teal-700">ACTREC Clinical Lab</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Oncology & Cell Signaling Assay Pipeline</h3>
+                                <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                    Evaluated therapeutic selectivity and apoptotic cell-death signaling pathways across neuroblastoma and microglial models via Cytotoxicity Assays and In-Vivo Studies.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
+                                <span>Western Blot</span><span>•</span><span>ELISA</span><span>•</span><span>SH-SY5Y</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-mono text-teal-700">Toxicology Reports • 2 Papers</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Nanotoxicology & Oxidative Stress Pathways</h3>
+                                <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                                    Investigated nanomaterial-cell interactions via fluorescence microscopy, Algal Growth Inhibition Assays, ROS generation, and lipid peroxidation markers in <em>Chlorella sp.</em> to map oxidative stress pathways.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
+                                <span>Fluorescence Microscopy</span><span>•</span><span>ROS Assays</span><span>•</span><span>Chlorella sp.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUSINESS & OPERATIONS PATH CONTENT -->
+            <div id="content-biz" class="lens-biz space-y-16">
+                <!-- Business Capabilities Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="p-6 bg-slate-50/50 rounded-xl border border-slate-200/60 hover:border-slate-300 transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-sm mb-4">01</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Market Analysis & Strategy</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Evaluating biopharma market landscapes, competitive dynamics, and asset viability to identify commercialization pathways for novel therapies.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Market Intelligence</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Asset Valuation</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Competitive Benchmarking</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="p-6 bg-slate-50/50 rounded-xl border border-slate-200/60 hover:border-slate-300 transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-sm mb-4">02</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Bio-Business Development</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Bridging laboratory R&D with business development—translating complex bioprocess data into actionable investment cases and partner pipelines.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Partnering Strategy</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Tech Transfer</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Pitch & Proposal Dev</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="p-6 bg-slate-50/50 rounded-xl border border-slate-200/60 hover:border-slate-300 transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-sm mb-4">03</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Clinical Ops & Regulatory</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Structuring operational workflows, ensuring GCP compliance, standardizing SOPs, and safeguarding data integrity across clinical research stages.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">GCP & GLP Standards</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">SOP Design</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Risk Mitigation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operational Modules Grid -->
+                <div>
+                    <div class="flex items-center justify-between mb-8">
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-900">Clinical & Operational Case Studies</h2>
+                        <span class="text-xs font-mono text-slate-400">03 Modules</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Case 1 -->
+                        <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-mono text-teal-700">Clinical Governance</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Clinical Trial Protocol Standardization</h3>
+                                <p class="text-xs text-slate-600 leading-relaxed mb-6">
