@@ -49,36 +49,18 @@
 <style>
   /* --- DUAL-LENS TOGGLE SYSTEM --- */
 
-  /* 1. Default State: Show R&D, Hide Business completely */
-  .lens-biz {
-    display: none !important;
-  }
-  .lens-rd {
-    display: block !important;
-  }
+  .lens-biz { display: none !important; }
+  .lens-rd { display: block !important; }
 
-  /* Fix for R&D Grids/Flex containers */
   div.lens-rd.grid { display: grid !important; }
   div.lens-rd.flex { display: flex !important; }
 
-  /* 2. When Business Radio is Checked: Hide R&D, Show Business */
-  #radio-biz:checked ~ * .lens-rd {
-    display: none !important;
-  }
+  #radio-biz:checked ~ * .lens-rd { display: none !important; }
+  #radio-biz:checked ~ * .lens-biz { display: block !important; }
 
-  #radio-biz:checked ~ * .lens-biz {
-    display: block !important;
-  }
+  #radio-biz:checked ~ * div.lens-biz.grid { display: grid !important; }
+  #radio-biz:checked ~ * div.lens-biz.flex { display: flex !important; }
 
-  /* Preserve grid and flex layouts for Business sections */
-  #radio-biz:checked ~ * div.lens-biz.grid {
-    display: grid !important;
-  }
-  #radio-biz:checked ~ * div.lens-biz.flex {
-    display: flex !important;
-  }
-
-  /* 3. Dynamic Header Button Color Switches */
   #radio-rd:checked ~ * #btn-lens-rd {
     background-color: #0f172a !important;
     color: #ffffff !important;
@@ -99,6 +81,38 @@
     background-color: transparent !important;
     color: #475569 !important;
     box-shadow: none !important;
+  }
+
+  /* --- 3D FLIP CARD CSS --- */
+  .flip-card {
+    perspective: 1000px;
+    height: 380px; /* Adjusted height for comfortable formatting */
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+
+  .flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
   }
 </style>
 </head>
@@ -129,17 +143,14 @@
     <main class="max-w-6xl mx-auto px-6 py-12 space-y-20">
         <!-- Hero Section -->
         <section>
-            <!-- Category Tag -->
             <p class="text-xs font-mono uppercase tracking-widest text-teal-700 font-semibold mb-6">
                 Biotechnology · Business Development · Scientific Commercialisation
             </p>
             
-            <!-- Main Editorial Title -->
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.12] mb-8">
                 Research that connects <em class="font-serif italic font-normal text-slate-800">discovery</em> to impact.
             </h1>
 
-            <!-- Dynamic Bio Subtext -->
             <div class="relative min-h-[90px] mb-10">
                 <!-- R&D Bio Text -->
                 <div id="bio-rd" class="lens-rd">
@@ -148,7 +159,7 @@
                     </p>
                 </div>
 
-                <!-- Business Bio Text (CV-Aligned & Grounded) -->
+                <!-- Business Bio Text -->
                 <div id="bio-biz" class="lens-biz">
                     <p class="text-lg text-slate-600 leading-relaxed font-normal">
                         I am a life sciences graduate combining hands-on laboratory experience in cell and molecular biology with practical business analysis and market strategy training from my MSc at the University of Leeds. I focus on translating complex scientific mechanisms into clear strategic insights, market research synthesis, and pipeline growth opportunities.
@@ -166,7 +177,6 @@
                 </a>
             </div>
 
-            <!-- Subtext Badge -->
             <div class="mt-12 flex items-center gap-2 text-xs font-mono text-slate-500">
                 <span class="w-2 h-2 rounded-full bg-teal-600"></span>
                 MSc Biotechnology with Business Enterprise · University of Leeds · United Kingdom
@@ -185,7 +195,7 @@
                     </div>
                     <div class="p-4 rounded-lg bg-white border border-slate-200/80">
                         <div class="font-semibold text-slate-900 mb-1">Protein Analytics</div>
-                        <div class="text-xs text-slate-500">Executed quantitative ELISA, Western blotting, and SDS-PAGE quality assessments to evaluate protein expression and cellular assay readouts</div>
+                        <div class="text-xs text-slate-500">Executed quantitative quality assessments to evaluate protein expression and cellular assay readouts</div>
                     </div>
                     <div class="p-4 rounded-lg bg-white border border-slate-200/80">
                         <div class="font-semibold text-slate-900 mb-1">In Silico Design</div>
@@ -193,63 +203,149 @@
                     </div>
                     <div class="p-4 rounded-lg bg-white border border-slate-200/80">
                         <div class="font-semibold text-slate-900 mb-1">Cloning & Assembly</div>
-                        <div class="text-xs text-slate-500">Performed Gibson Assembly cloning and recombinant protein expression of SurE within an NRPS expression system</div>
+                        <div class="text-xs text-slate-500">Performed HiFi Assembly, Inverse PCR, and recombinant protein expression of SurE quadruple mutants</div>
                     </div>
                 </div>
 
-                <!-- Featured Projects -->
+                <!-- Featured Projects with 3D Flip Cards -->
                 <div>
                     <div class="flex items-center justify-between mb-8">
-                        <h2 class="text-2xl font-bold tracking-tight text-slate-900">Featured Research Projects</h2>
+                        <div>
+                            <h2 class="text-2xl font-bold tracking-tight text-slate-900">Featured Research Projects</h2>
+                            <p class="text-xs text-slate-500 mt-1">Click on any card to flip and view project execution details</p>
+                        </div>
                         <span class="text-xs font-mono text-slate-400">03 Entries</span>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
-                            <div>
-                                <span class="text-xs font-mono text-teal-700">MSc Thesis Project</span>
-                                <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Molecular Engineering & NRPS Biosynthesis</h3>
-                                <p class="text-xs text-slate-600 leading-relaxed mb-6">
-                                    Integrated AlphaFold2 structural domain predictions with Gibson Assembly cloning to resolve SurE phosphatase and NRPS expression insolubility in <em>E. coli</em>.
-                                </p>
-                            </div>
-                            <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
-                                <span>AlphaFold2</span><span>•</span><span>SnapGene</span><span>•</span><span>Gibson</span>
+                        <!-- Project 1 Flip Card -->
+                        <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card-inner">
+                                <!-- Front Side -->
+                                <div class="flip-card-front bg-white p-6 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-xs font-mono text-teal-700">MSc Thesis Project</span>
+                                            <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">Click to flip 🔄</span>
+                                        </div>
+                                        <h3 class="text-base font-bold text-slate-900 mt-2 mb-2">Molecular Engineering & SurE Mutagenesis</h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                            Engineered recombinant expression vectors via HiFi Assembly and Inverse PCR to study the quadruple mutant of the SurE enzyme.
+                                        </p>
+                                    </div>
+                                    <div class="pt-3 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
+                                        <span>HiFi Assembly</span><span>•</span><span>Inverse PCR</span><span>•</span><span>SurE Mutant</span>
+                                    </div>
+                                </div>
+                                <!-- Back Side (Cleaned & Uncrowded) -->
+                                <div class="flip-card-back bg-slate-900 text-white p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center justify-between mb-3">
+                                            <span class="text-xs font-mono text-teal-400">Project Execution Details</span>
+                                            <span class="text-[11px] font-mono text-slate-400">Click to flip 🔄</span>
+                                        </div>
+                                        <h4 class="text-xs font-bold text-white mb-2 uppercase tracking-wider">Key Work & Methodologies:</h4>
+                                        <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside leading-relaxed">
+                                            <li>Designed expression vectors using <strong>SnapGene</strong> and structural modeling.</li>
+                                            <li>Executed <strong>Inverse PCR</strong> for site-directed mutagenesis of the SurE enzyme.</li>
+                                            <li>Performed <strong>HiFi Assembly</strong> for precise DNA fragment joining.</li>
+                                            <li>Managed recombinant expression and protein solubility analysis.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pt-3 border-t border-slate-800 text-[11px] font-mono text-slate-400">
+                                        Focus: Protein Engineering & Mutagenesis
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
-                            <div>
-                                <span class="text-xs font-mono text-teal-700">ACTREC Clinical Lab</span>
-                                <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Oncology & Cell Signaling Assay Pipeline</h3>
-                                <p class="text-xs text-slate-600 leading-relaxed mb-6">
-                                    Evaluated therapeutic selectivity and apoptotic cell-death signaling pathways across neuroblastoma and microglial models via Cytotoxicity Assays and In-Vivo Studies.
-                                </p>
-                            </div>
-                            <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
-                                <span>Western Blot</span><span>•</span><span>ELISA</span><span>•</span><span>SH-SY5Y</span>
+                        <!-- Project 2 Flip Card -->
+                        <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card-inner">
+                                <!-- Front Side -->
+                                <div class="flip-card-front bg-white p-6 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-xs font-mono text-teal-700">ACTREC Clinical Lab</span>
+                                            <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">Click to flip 🔄</span>
+                                        </div>
+                                        <h3 class="text-base font-bold text-slate-900 mt-2 mb-2">Oncology & Cell Signaling Assay Pipeline</h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                            Evaluated therapeutic selectivity and apoptotic cell-death signaling pathways across neuroblastoma and microglial models.
+                                        </p>
+                                    </div>
+                                    <div class="pt-3 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
+                                        <span>Cytotoxicity Assays</span><span>•</span><span>SH-SY5Y</span><span>•</span><span>Cell Signaling</span>
+                                    </div>
+                                </div>
+                                <!-- Back Side (Cleaned & Uncrowded) -->
+                                <div class="flip-card-back bg-slate-900 text-white p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center justify-between mb-3">
+                                            <span class="text-xs font-mono text-teal-400">Project Execution Details</span>
+                                            <span class="text-[11px] font-mono text-slate-400">Click to flip 🔄</span>
+                                        </div>
+                                        <h4 class="text-xs font-bold text-white mb-2 uppercase tracking-wider">Key Work & Methodologies:</h4>
+                                        <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside leading-relaxed">
+                                            <li>Aseptically maintained and expanded cell lines: <strong>SH-SY5Y, HMC3, and U87</strong>.</li>
+                                            <li>Standardized microplate cytotoxicity and ROS assays to reduce baseline signal drift.</li>
+                                            <li>Analyzed cellular responses to therapeutic treatments in a high-standards clinical environment.</li>
+                                            <li>Co-authored 2 high-impact papers in <em>Cancer Letters</em> & <em>Brain Research</em>.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pt-3 border-t border-slate-800 text-[11px] font-mono text-slate-400">
+                                        Focus: Assays & Cancer Biology
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
-                            <div>
-                                <span class="text-xs font-mono text-teal-700">Toxicology Reports • 2 Papers</span>
-                                <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Nanotoxicology & Oxidative Stress Pathways</h3>
-                                <p class="text-xs text-slate-600 leading-relaxed mb-6">
-                                    Investigated nanomaterial-cell interactions via fluorescence microscopy, Algal Growth Inhibition Assays, ROS generation, and lipid peroxidation markers in <em>Chlorella sp.</em>
-                                </p>
-                            </div>
-                            <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
-                                <span>Fluorescence Microscopy</span><span>•</span><span>ROS Assays</span>
+                        <!-- Project 3 Flip Card -->
+                        <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card-inner">
+                                <!-- Front Side -->
+                                <div class="flip-card-front bg-white p-6 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-xs font-mono text-teal-700">Toxicology Reports • 2 Papers</span>
+                                            <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">Click to flip 🔄</span>
+                                        </div>
+                                        <h3 class="text-base font-bold text-slate-900 mt-2 mb-2">Nanotoxicology & Oxidative Stress Pathways</h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                            Investigated nanomaterial-cell interactions via fluorescence microscopy, Algal Growth Inhibition Assays, and ROS generation.
+                                        </p>
+                                    </div>
+                                    <div class="pt-3 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
+                                        <span>Fluorescence Microscopy</span><span>•</span><span>ROS Assays</span>
+                                    </div>
+                                </div>
+                                <!-- Back Side (Cleaned & Uncrowded) -->
+                                <div class="flip-card-back bg-slate-900 text-white p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center justify-between mb-3">
+                                            <span class="text-xs font-mono text-teal-400">Project Execution Details</span>
+                                            <span class="text-[11px] font-mono text-slate-400">Click to flip 🔄</span>
+                                        </div>
+                                        <h4 class="text-xs font-bold text-white mb-2 uppercase tracking-wider">Key Work & Methodologies:</h4>
+                                        <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside leading-relaxed">
+                                            <li>Executed standardized <strong>OECD 201 Algal Growth Inhibition Assays</strong>.</li>
+                                            <li>Tracked cellular uptake and bio-nanomaterial stress using <strong>fluorescence microscopy</strong>.</li>
+                                            <li>Quantified lipid peroxidation markers, antioxidant responses, and ROS generation in microalgae.</li>
+                                            <li>Published 2 peer-reviewed research papers in <em>Toxicology Reports</em>.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pt-3 border-t border-slate-800 text-[11px] font-mono text-slate-400">
+                                        Focus: Ecotoxicology & Biophysical Assays
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- BUSINESS & OPERATIONS PATH CONTENT (CV ALIGNED & GROUNDED) -->
+            <!-- BUSINESS & OPERATIONS PATH CONTENT -->
             <div id="content-biz" class="lens-biz space-y-16">
-                <!-- Business Capabilities Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Card 1 -->
                     <div class="p-6 bg-slate-50/50 rounded-xl border border-slate-200/60 hover:border-slate-300 transition-all">
@@ -294,7 +390,7 @@
                     </div>
                 </div>
 
-                <!-- CV-Aligned Commercial Experience Modules -->
+                <!-- Commercial Experience Modules -->
                 <div>
                     <div class="flex items-center justify-between mb-8">
                         <h2 class="text-2xl font-bold tracking-tight text-slate-900">Commercial & Leadership Experience</h2>
@@ -322,7 +418,7 @@
                                 <span class="text-xs font-mono text-teal-700">Student Society Leadership</span>
                                 <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Biotech Research Students of India (BRSI)</h3>
                                 <p class="text-xs text-slate-600 leading-relaxed mb-6">
-                                    Organized biotech hackathons, coordinated stakeholders, managed event communications, and built professional networks across the research community[cite: 5].
+                                    Organized biotech hackathons, coordinated stakeholders, managed event communications, and built professional networks across the research community.
                                 </p>
                             </div>
                             <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
@@ -442,7 +538,7 @@
                 </div>
             </div>
 
-            <!-- Business & Commercial Lens Education Mapping (CV ALIGNED) -->
+            <!-- Business & Commercial Lens Education Mapping -->
             <div id="edu-biz" class="lens-biz space-y-8 max-w-3xl">
                 <div class="border-l-2 border-slate-900 pl-6 py-1">
                     <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
@@ -465,6 +561,25 @@
                         <strong>Quality Standards:</strong> Certified in Good Clinical Practice (GCP) by NIHR—ensuring ethical and scientific quality standards in pharmaceutical research, complemented by hands-on clinical lab exposure at ACTREC.
                     </p>
                 </div>
+            </div>
+        </section>
+
+        <!-- GET IN TOUCH SECTION -->
+        <section id="contact" class="py-12 bg-slate-900 text-white rounded-2xl px-8 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div>
+                <p class="text-xs font-mono uppercase tracking-widest text-teal-400 mb-2">Let's Connect</p>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-2">Get in Touch</h2>
+                <p class="text-slate-300 text-xs sm:text-sm max-w-xl leading-relaxed">
+                    I am actively seeking opportunities in biotechnology, R&D, and scientific business development. Whether you want to discuss research collaborations or professional roles, my inbox is always open.
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                <a href="mailto:jzgw0081@leeds.ac.uk" class="px-6 py-3 rounded-lg bg-teal-600 text-white font-medium text-sm hover:bg-teal-500 transition-colors text-center inline-flex items-center justify-center gap-2">
+                    Email Me &rarr;
+                </a>
+                <a href="https://linkedin.com/in/janmey-shah-17565a20b" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 font-medium text-sm hover:bg-slate-700 transition-colors text-center">
+                    LinkedIn Profile &nearr;
+                </a>
             </div>
         </section>
     </main>
