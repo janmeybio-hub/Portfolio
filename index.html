@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Janmey Shah, MSc | Biotechnology & Clinical Research Portfolio</title>
+    <title>Janmey Shah, MSc | Biotechnology & Business Development Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
@@ -47,7 +47,7 @@
         }
     </script>
 <style>
-  /* --- BULLETPROOF DUAL-LENS TOGGLE SYSTEM --- */
+  /* --- DUAL-LENS TOGGLE SYSTEM --- */
 
   /* 1. Default State: Show R&D, Hide Business completely */
   .lens-biz {
@@ -57,7 +57,7 @@
     display: block !important;
   }
 
-  /* Fix for R&D Grids/Flex containers so they don't break when visible */
+  /* Fix for R&D Grids/Flex containers */
   div.lens-rd.grid { display: grid !important; }
   div.lens-rd.flex { display: flex !important; }
 
@@ -66,7 +66,6 @@
     display: none !important;
   }
 
-  /* Show Business blocks */
   #radio-biz:checked ~ * .lens-biz {
     display: block !important;
   }
@@ -104,11 +103,11 @@
 </style>
 </head>
 <body class="font-sans text-slate-900 bg-canvas antialiased">
-    <!-- Hidden radio inputs must be at the very top of the body -->
+    <!-- Hidden radio inputs -->
     <input type="radio" name="lens-switch" id="radio-rd" checked class="hidden">
     <input type="radio" name="lens-switch" id="radio-biz" class="hidden">
 
-    <!-- Top Editorial Header -->
+    <!-- Header -->
     <header class="sticky top-0 z-50 bg-canvas/90 backdrop-blur-md border-b border-slate-200/80">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
             <!-- Brand -->
@@ -121,7 +120,7 @@
                     R&D Lens
                 </label>
                 <label for="radio-biz" id="btn-lens-biz" class="cursor-pointer px-3.5 py-1.5 rounded-full transition-all duration-200 text-slate-600 hover:text-slate-900">
-                    Business & Ops
+                    Business & Commercial
                 </label>
             </div>
         </div>
@@ -132,7 +131,7 @@
         <section>
             <!-- Category Tag -->
             <p class="text-xs font-mono uppercase tracking-widest text-teal-700 font-semibold mb-6">
-                Biotechnology · Molecular Microbiology · Clinical Research
+                Biotechnology · Business Development · Scientific Commercialisation
             </p>
             
             <!-- Main Editorial Title -->
@@ -149,10 +148,10 @@
                     </p>
                 </div>
 
-                <!-- Business Bio Text -->
+                <!-- Business Bio Text (CV-Aligned & Grounded) -->
                 <div id="bio-biz" class="lens-biz">
                     <p class="text-lg text-slate-600 leading-relaxed font-normal">
-                        I am Janmey Shah, a biotechnology specialist leveraging expertise across market intelligence, bio-business development, and clinical operations. I bridge the gap between technical bioprocess R&D and commercial viability—evaluating market landscapes, streamlining GCP compliance, and identifying strategic growth opportunities for emerging therapies.
+                        I am a life sciences graduate combining hands-on laboratory experience in cell and molecular biology with practical business analysis and market strategy training from my MSc at the University of Leeds[cite: 4]. I focus on translating complex scientific mechanisms into clear strategic insights, market research synthesis, and pipeline growth opportunities[cite: 4].
                     </p>
                 </div>
             </div>
@@ -170,7 +169,7 @@
             <!-- Subtext Badge -->
             <div class="mt-12 flex items-center gap-2 text-xs font-mono text-slate-500">
                 <span class="w-2 h-2 rounded-full bg-teal-600"></span>
-                MSc Biotechnology · University of Leeds · United Kingdom
+                MSc Biotechnology with Business Enterprise · University of Leeds · United Kingdom[cite: 4]
             </div>
         </section>
 
@@ -178,24 +177,20 @@
         <section id="projects">
             <!-- R&D PATH CONTENT -->
             <div id="content-rd" class="lens-rd space-y-16">
-                <!-- Core Technical Capabilities Updates -->
+                <!-- Core Technical Capabilities -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                    <!-- Mammalian Cell Culture -->
                     <div class="p-4 rounded-lg bg-white border border-slate-200/80">
-                        <div class="font-semibold text-slate-900 mb-1">Mammalian Cell Culture Experience</div>
+                        <div class="font-semibold text-slate-900 mb-1">Mammalian Cell Culture</div>
                         <div class="text-xs text-slate-500">Maintained SH-SY5Y, HMC3 and U87 cell lines aseptically through expansion, passaging, counting and treatment to support cell-based studies</div>
                     </div>
-                    <!-- Protein Analytics -->
                     <div class="p-4 rounded-lg bg-white border border-slate-200/80">
                         <div class="font-semibold text-slate-900 mb-1">Protein Analytics</div>
                         <div class="text-xs text-slate-500">Executed quantitative ELISA, Western blotting, and SDS-PAGE quality assessments to evaluate protein expression and cellular assay readouts</div>
                     </div>
-                    <!-- In Silico Design -->
                     <div class="p-4 rounded-lg bg-white border border-slate-200/80">
                         <div class="font-semibold text-slate-900 mb-1">In Silico Design</div>
                         <div class="text-xs text-slate-500">Applied SnapGene for vector construct design and AlphaFold for structural analysis of assembly proteins and domains</div>
                     </div>
-                    <!-- Cloning & Assembly -->
                     <div class="p-4 rounded-lg bg-white border border-slate-200/80">
                         <div class="font-semibold text-slate-900 mb-1">Cloning & Assembly</div>
                         <div class="text-xs text-slate-500">Performed Gibson Assembly cloning and recombinant protein expression of SurE within an NRPS expression system</div>
@@ -210,7 +205,6 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Project 1 -->
                         <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
                             <div>
                                 <span class="text-xs font-mono text-teal-700">MSc Thesis Project</span>
@@ -224,7 +218,6 @@
                             </div>
                         </div>
 
-                        <!-- Project 2 -->
                         <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
                             <div>
                                 <span class="text-xs font-mono text-teal-700">ACTREC Clinical Lab</span>
@@ -238,117 +231,116 @@
                             </div>
                         </div>
 
-                        <!-- Project 3 -->
                         <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
                             <div>
                                 <span class="text-xs font-mono text-teal-700">Toxicology Reports • 2 Papers</span>
                                 <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Nanotoxicology & Oxidative Stress Pathways</h3>
                                 <p class="text-xs text-slate-600 leading-relaxed mb-6">
-                                    Investigated nanomaterial-cell interactions via fluorescence microscopy, Algal Growth Inhibition Assays, ROS generation, and lipid peroxidation markers in <em>Chlorella sp.</em> to map oxidative stress pathways.
+                                    Investigated nanomaterial-cell interactions via fluorescence microscopy, Algal Growth Inhibition Assays, ROS generation, and lipid peroxidation markers in <em>Chlorella sp.</em>
                                 </p>
                             </div>
                             <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
-                                <span>Fluorescence Microscopy</span><span>•</span><span>ROS Assays</span><span>•</span><span>Chlorella sp.</span>
+                                <span>Fluorescence Microscopy</span><span>•</span><span>ROS Assays</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- BUSINESS & OPERATIONS PATH CONTENT -->
+            <!-- BUSINESS & OPERATIONS PATH CONTENT (CV ALIGNED & GROUNDED) -->
             <div id="content-biz" class="lens-biz space-y-16">
                 <!-- Business Capabilities Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Card 1 -->
                     <div class="p-6 bg-slate-50/50 rounded-xl border border-slate-200/60 hover:border-slate-300 transition-all">
                         <div class="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-sm mb-4">01</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Market Analysis & Strategy</h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Market Intelligence & Research</h3>
                         <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                            Evaluating biopharma market landscapes, competitive dynamics, and asset viability to identify commercialization pathways for novel therapies.
+                            Conducting end-to-end market research, competitor profiling, and account mapping across digital ecosystems to identify target segments and growth drivers.
                         </p>
                         <div class="flex flex-wrap gap-1.5">
-                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Market Intelligence</span>
-                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Asset Valuation</span>
-                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Competitive Benchmarking</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Account Mapping</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Competitor Profiling</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Market Segmentation</span>
                         </div>
                     </div>
 
                     <!-- Card 2 -->
                     <div class="p-6 bg-slate-50/50 rounded-xl border border-slate-200/60 hover:border-slate-300 transition-all">
                         <div class="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-sm mb-4">02</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Bio-Business Development</h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Scientific Communication</h3>
                         <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                            Bridging laboratory R&D with business development—translating complex bioprocess data into actionable investment cases and partner pipelines.
+                            Translating complex biological concepts, technical assay metrics, and literature findings into structured, high-impact written reports and outreach content[cite: 4].
                         </p>
                         <div class="flex flex-wrap gap-1.5">
-                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Partnering Strategy</span>
-                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Tech Transfer</span>
-                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Pitch & Proposal Dev</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Executive Reporting</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Literature Synthesis</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Technical Writing</span>
                         </div>
                     </div>
 
                     <!-- Card 3 -->
                     <div class="p-6 bg-slate-50/50 rounded-xl border border-slate-200/60 hover:border-slate-300 transition-all">
                         <div class="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-sm mb-4">03</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Clinical Ops & Regulatory</h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Stakeholder Engagement</h3>
                         <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                            Structuring operational workflows, ensuring GCP compliance, standardizing SOPs, and safeguarding data integrity across clinical research stages.
+                            Building relationships across academic, clinical, and research communities through active event hosting, society leadership, and collaborative teamwork[cite: 4, 5].
                         </p>
                         <div class="flex flex-wrap gap-1.5">
-                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">GCP & GLP Standards</span>
-                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">SOP Design</span>
-                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Risk Mitigation</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Relationship Building</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Community Outreach</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[11px] font-mono text-slate-600">Cross-Functional Sync</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Operational Modules Grid -->
+                <!-- CV-Aligned Commercial Experience Modules -->
                 <div>
                     <div class="flex items-center justify-between mb-8">
-                        <h2 class="text-2xl font-bold tracking-tight text-slate-900">Clinical & Operational Case Studies</h2>
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-900">Commercial & Leadership Experience</h2>
                         <span class="text-xs font-mono text-slate-400">03 Modules</span>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Case 1 -->
+                        <!-- Module 1 -->
                         <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all flex flex-col justify-between">
                             <div>
-                                <span class="text-xs font-mono text-teal-700">Clinical Governance</span>
-                                <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Clinical Trial Protocol Standardization</h3>
+                                <span class="text-xs font-mono text-teal-700">Commercial Strategy Consulting</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">ActivitIA Technologies (Practera / Leeds)</h3>
                                 <p class="text-xs text-slate-600 leading-relaxed mb-6">
-                                    Aligned laboratory assay procedures at ACTREC with GCP trial standards, ensuring audit-ready documentation and zero protocol deviation in biological sample processing.
+                                    Conducted end-to-end market research, built Go-To-Market (GTM) scoping models for B2B onboarding, and co-authored a 90-day growth readiness report for executive decision-makers[cite: 4].
                                 </p>
                             </div>
                             <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
-                                <span>GCP Audit</span> · <span>Sample Tracking</span> · <span>SOP</span>
+                                <span>Market Intelligence</span> · <span>GTM Scoping</span> · <span>Reporting</span>
                             </div>
                         </div>
 
-                        <!-- Case 2 -->
+                        <!-- Module 2 -->
                         <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all flex flex-col justify-between">
                             <div>
-                                <span class="text-xs font-mono text-teal-700">Technical Services</span>
-                                <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Cross-Functional Tech Transfer</h3>
+                                <span class="text-xs font-mono text-teal-700">Student Society Leadership</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Biotech Research Students of India (BRSI)</h3>
                                 <p class="text-xs text-slate-600 leading-relaxed mb-6">
-                                    Developed method-transfer protocols to bridge structural protein modeling insights with reproducible benchtop induction parameters across research groups.
+                                    Organized biotech hackathons, coordinated stakeholders, managed event communications, and built professional networks across the research community[cite: 5].
                                 </p>
                             </div>
                             <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
-                                <span>Tech Transfer</span> · <span>Scale-Up</span> · <span>Validation</span>
+                                <span>Event Planning</span> · <span>Stakeholder Coordination</span> · <span>Outreach</span>
                             </div>
                         </div>
 
-                        <!-- Case 3 -->
+                        <!-- Module 3 -->
                         <div class="bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-400 transition-all flex flex-col justify-between">
                             <div>
-                                <span class="text-xs font-mono text-teal-700">Biosafety & Compliance</span>
-                                <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">Bio-Nanomaterial Safety Auditing</h3>
+                                <span class="text-xs font-mono text-teal-700">Clinical & Scientific Credibility</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3">ACTREC Clinical Research Liaison</h3>
                                 <p class="text-xs text-slate-600 leading-relaxed mb-6">
-                                    Executed systematic toxicology profiling and cleanroom biosafety audits for nanomaterial interactions, ensuring strict alignment with international safety standards.
+                                    Worked closely with senior clinicians and researchers at a premier cancer center, contributing to publications and developing deep domain knowledge in oncology and drug processes[cite: 4].
                                 </p>
                             </div>
                             <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
-                                <span>Biosafety</span> · <span>Risk Assessment</span> · <span>Compliance</span>
+                                <span>Oncology Knowledge</span> · <span>Scientific Context</span> · <span>GCP Training</span>
                             </div>
                         </div>
                     </div>
@@ -430,7 +422,7 @@
                 <div class="border-l-2 border-slate-900 pl-6 py-1">
                     <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
                         <span>MSc Biotechnology</span>
-                        <span>2025 – 2026 · Leeds, UK</span>
+                        <span>2025 – Present · Leeds, UK[cite: 4]</span>
                     </div>
                     <h3 class="text-base font-bold text-slate-900">University of Leeds</h3>
                     <p class="text-xs text-slate-600 mt-2 leading-relaxed">
@@ -440,37 +432,37 @@
 
                 <div class="border-l-2 border-slate-300 pl-6 py-1">
                     <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
-                        <span>Research Training & Fellowships</span>
-                        <span>2020 – 2024 · Vellore, IN</span>
+                        <span>BTech Biotechnology</span>
+                        <span>Graduated 2024 · Vellore, IN[cite: 4]</span>
                     </div>
-                    <h3 class="text-base font-bold text-slate-900">VIT - Vellore Institute of Technology</h3>
+                    <h3 class="text-base font-bold text-slate-900">VIT - Vellore Institute of Technology[cite: 4]</h3>
                     <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                        <strong>Lab Expertise:</strong> Built a robust theoretical and practical foundation in core biotechnology, molecular biology, and bioanalytical techniques.
+                        <strong>Lab Expertise:</strong> First Class Equivalent (GPA: 7.9/10)[cite: 4]. Core curriculum covering Cell Biology, Molecular Biology, Biochemistry, Genetics, and Protein Science[cite: 4].
                     </p>
                 </div>
             </div>
 
-            <!-- Business & Operations Lens Education Mapping -->
+            <!-- Business & Commercial Lens Education Mapping (CV ALIGNED) -->
             <div id="edu-biz" class="lens-biz space-y-8 max-w-3xl">
                 <div class="border-l-2 border-slate-900 pl-6 py-1">
                     <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
-                        <span>MSc Biotechnology (Bioprocess & Quality Governance)</span>
-                        <span>2022 – 2023 · Leeds, UK</span>
+                        <span>MSc - Biotechnology with Business Enterprise</span>
+                        <span>2025 – Present · Leeds, UK[cite: 4]</span>
                     </div>
-                    <h3 class="text-base font-bold text-slate-900">University of Leeds</h3>
+                    <h3 class="text-base font-bold text-slate-900">University of Leeds[cite: 4]</h3>
                     <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                        <strong>Operations Focus:</strong> Bio-business strategy, bioprocess quality control, regulatory frameworks, and technical translation of laboratory workflows to scalable biomanufacturing.
+                        <strong>Commercial Focus:</strong> Studied pharma commercialization, drug discovery business models, venture creation, commercial viability modeling, and critical entrepreneurship strategies[cite: 4].
                     </p>
                 </div>
 
                 <div class="border-l-2 border-slate-300 pl-6 py-1">
                     <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
-                        <span>Clinical Governance & Bio-Safety Compliance</span>
-                        <span>Vellore, IN</span>
+                        <span>Certifications & Research Training</span>
+                        <span>ACTREC & NIHR</span>
                     </div>
-                    <h3 class="text-base font-bold text-slate-900">ACTREC Clinical Centre & VIT CNBT</h3>
+                    <h3 class="text-base font-bold text-slate-900">Clinical & Quality Standards</h3>
                     <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                        <strong>Governance & Safety:</strong> Strict adherence to Good Clinical Practice (GCP), Good Laboratory Practice (GLP), cleanroom safety protocols, and audit-ready clinical sample logging.
+                        <strong>Quality Standards:</strong> Certified in Good Clinical Practice (GCP) by NIHR—ensuring ethical and scientific quality standards in pharmaceutical research, complemented by hands-on clinical lab exposure at ACTREC[cite: 4, 5].
                     </p>
                 </div>
             </div>
@@ -481,7 +473,7 @@
     <footer class="border-t border-slate-200/80 py-8 bg-white text-xs font-mono text-slate-400">
         <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>&copy; 2026 Janmey Shah. Built for GitHub Pages.</div>
-            <div>MSc Biotechnology · University of Leeds</div>
+            <div>MSc Biotechnology with Business Enterprise · University of Leeds[cite: 4]</div>
         </div>
     </footer>
 </body>
