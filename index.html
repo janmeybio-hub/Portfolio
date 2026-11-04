@@ -33,9 +33,12 @@
                             950: '#090d16',
                         },
                         teal: {
+                            500: '#14b8a6',
                             600: '#0d9488',
                             700: '#0f766e',
+                            800: '#115e59',
                             900: '#134e4a',
+                            950: '#042f2e',
                         }
                     },
                     fontFamily: {
@@ -86,7 +89,7 @@
   /* --- 3D FLIP CARD CSS --- */
   .flip-card {
     perspective: 1000px;
-    height: 380px; /* Adjusted height for comfortable formatting */
+    height: 380px;
   }
 
   .flip-card-inner {
@@ -237,7 +240,7 @@
                                         <span>HiFi Assembly</span><span>•</span><span>Inverse PCR</span><span>•</span><span>SurE Mutant</span>
                                     </div>
                                 </div>
-                                <!-- Back Side (Cleaned & Uncrowded) -->
+                                <!-- Back Side -->
                                 <div class="flip-card-back bg-slate-900 text-white p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
                                     <div>
                                         <div class="flex items-center justify-between mb-3">
@@ -278,7 +281,7 @@
                                         <span>Cytotoxicity Assays</span><span>•</span><span>SH-SY5Y</span><span>•</span><span>Cell Signaling</span>
                                     </div>
                                 </div>
-                                <!-- Back Side (Cleaned & Uncrowded) -->
+                                <!-- Back Side -->
                                 <div class="flip-card-back bg-slate-900 text-white p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
                                     <div>
                                         <div class="flex items-center justify-between mb-3">
@@ -319,7 +322,7 @@
                                         <span>Fluorescence Microscopy</span><span>•</span><span>ROS Assays</span>
                                     </div>
                                 </div>
-                                <!-- Back Side (Cleaned & Uncrowded) -->
+                                <!-- Back Side -->
                                 <div class="flip-card-back bg-slate-900 text-white p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
                                     <div>
                                         <div class="flex items-center justify-between mb-3">
@@ -482,7 +485,7 @@
                 <div class="bg-white p-6 rounded-xl border border-slate-200/80 flex flex-col justify-between">
                     <div>
                         <span class="text-[11px] font-mono text-teal-700">Toxicology Reports • Dec 2024 • Researcher</span>
-                        <h3 class="text-base font-bold text-slate-900 mt-2 mb-2">Fluorescent nanoplastics increase toxic effects of Graphene oxide in Scenedesmus obliquus</h3>
+                        <h3 class="text-base font-bold text-slate-900 mt-2 mb-2">Fluorescent nanplastics increase toxic effects of Graphene oxide in Scenedesmus obliquus</h3>
                         <p class="text-xs text-slate-600 leading-relaxed mb-4">
                             Executed standardized Algal Growth Inhibition Assays (OECD 201) and fluorescence microscopy to evaluate combination nanotoxicology.
                         </p>
@@ -565,21 +568,45 @@
         </section>
 
         <!-- GET IN TOUCH SECTION -->
-        <section id="contact" class="py-12 bg-slate-900 text-white rounded-2xl px-8 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
-            <div>
-                <p class="text-xs font-mono uppercase tracking-widest text-teal-400 mb-2">Let's Connect</p>
-                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-2">Get in Touch</h2>
-                <p class="text-slate-300 text-xs sm:text-sm max-w-xl leading-relaxed">
-                    I am actively seeking opportunities in biotechnology, R&D, and scientific business development. Whether you want to discuss research collaborations or professional roles, my inbox is always open.
-                </p>
+        <section id="contact" class="py-12 bg-teal-950 text-white rounded-2xl px-8 md:px-12 border border-teal-800/80 shadow-md">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-8">
+                <div>
+                    <p class="text-xs font-mono uppercase tracking-widest text-teal-400 mb-2">Let's Connect</p>
+                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-2">Get in Touch</h2>
+                    <p class="text-teal-100/80 text-xs sm:text-sm max-w-xl leading-relaxed">
+                        I am actively seeking opportunities across biotechnology R&D, upstream processing, and pharma business development. Open to relocation across the UK and internationally.
+                    </p>
+                </div>
+                <div class="flex flex-wrap sm:flex-nowrap gap-3 w-full md:w-auto">
+                    <a href="mailto:jzgw0081@leeds.ac.uk" class="px-5 py-2.5 rounded-lg bg-teal-600 text-white font-medium text-xs hover:bg-teal-500 transition-colors text-center inline-flex items-center justify-center gap-2">
+                        Email Me &rarr;
+                    </a>
+                    <a href="https://linkedin.com/in/janmey-shah-17565a20b" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-lg bg-teal-900/80 border border-teal-700/60 text-teal-100 font-medium text-xs hover:bg-teal-800 transition-colors text-center">
+                        LinkedIn Profile &nearr;
+                    </a>
+                </div>
             </div>
-            <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-                <a href="mailto:jzgw0081@leeds.ac.uk" class="px-6 py-3 rounded-lg bg-teal-600 text-white font-medium text-sm hover:bg-teal-500 transition-colors text-center inline-flex items-center justify-center gap-2">
-                    Email Me &rarr;
-                </a>
-                <a href="https://linkedin.com/in/janmey-shah-17565a20b" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 font-medium text-sm hover:bg-slate-700 transition-colors text-center">
-                    LinkedIn Profile &nearr;
-                </a>
+
+            <!-- Compact Contact & Location Details Strip -->
+            <div class="pt-6 border-t border-teal-800/60 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-mono">
+                <div>
+                    <span class="block text-teal-400/80 text-[10px] uppercase">Email</span>
+                    <a href="mailto:jzgw0081@leeds.ac.uk" class="text-teal-100 hover:text-white transition-colors">jzgw0081@leeds.ac.uk</a>
+                </div>
+                <div>
+                    <span class="block text-teal-400/80 text-[10px] uppercase">Phone</span>
+                    <a href="tel:+447767175402" class="text-teal-100 hover:text-white transition-colors">+44 7767 175402</a>
+                </div>
+                <div>
+                    <span class="block text-teal-400/80 text-[10px] uppercase">Location</span>
+                    <span class="text-teal-100">Leeds, UK (Open to Relocation)</span>
+                </div>
+                <div>
+                    <span class="block text-teal-400/80 text-[10px] uppercase">Status</span>
+                    <span class="text-teal-200 flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span> Open to Opportunities
+                    </span>
+                </div>
             </div>
         </section>
     </main>
